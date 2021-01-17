@@ -1,8 +1,12 @@
-<h1><%= @task.title %></h1>
-<p><%= @task.description %></p>
-<p><%= @task.company %></p>
-<p><%= time_ago_in_words(@task.created_at) %></p>
-<p><a href='<%= @task.url %>' target="_blank"> Contact</a></p>
+<div class="card w-75">
+  <div class="card-body">
+    <h5 class="card-title"><%= @task.title %></h5>
+    <p class="card-text"><%= @task.description %></p>
+    <p class="card-text"><%= @task.company %></p>
+    <p class="card-text"><%= time_ago_in_words(@task.created_at) %></p>
+    <p><a href='<%= @task.url %>' target="_blank" class= 'btn btn-primary'> Contact</a></p>
+  </div>
+</div>
 
 
 <%= link_to 'Home', tasks_path %> |
