@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_01_17_131938) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "title"
-    t.text "desciption"
+    t.text "description"
     t.string "company"
     t.string "url"
     t.datetime "created_at", precision: 6, null: false

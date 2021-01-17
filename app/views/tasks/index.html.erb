@@ -1,1 +1,11 @@
 <h1>Index</h1>
+<% num = 0 %>
+<% @tasks.each do |task| %>
+  <% num += 1 %>
+
+  <h2><%= num %> | <%= link_to task.title, task_path(task) %></h2>
+  <p><%= task.company %></p>
+<% end %>
+
+<%= link_to 'New Task', new_task_path  %>
+
