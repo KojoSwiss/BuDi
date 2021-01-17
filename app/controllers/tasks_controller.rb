@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
 
   def index
     if params[:category].blank?
@@ -40,6 +41,9 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
     redirect_to tasks_path
+  end
+
+  def contact
   end
 
   private

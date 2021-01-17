@@ -14,6 +14,12 @@
   <body>
       <%= render 'shared/navbar' %>
     <div class="container">
+      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+        <%= link_to 'All Services', tasks_path %>
+        <% Category.all.each do |category| %>
+        <%= link_to category.name, tasks_path(category: category.name) %>
+        <% end %>
+      </div>
       <%= render 'shared/flashes' %>
 
       <%= yield %>

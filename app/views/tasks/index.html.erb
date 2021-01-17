@@ -1,11 +1,23 @@
-<h1>Index</h1>
-<% num = 0 %>
-<% @tasks.each do |task| %>
-  <% num += 1 %>
+<div class="row justify-content-center">
+  <div class="col-md-5">
+    <% num = 0 %>
+    <% @tasks.each do |task| %>
+      <% num += 1 %>
 
-  <h2><%= num %> | <%= link_to task.title, task_path(task) %></h2>
-  <p><%= task.company %></p>
-<% end %>
-
-<%= link_to 'New Task', new_task_path  %>
+      <h2><%= num %> | <%= link_to task.title, task_path(task) %></h2>
+      <p><%= task.company %></p>
+    <% end %>
+  </div>
+  <div class="col-md-5">
+    <div class="ontop">
+      <div class="jumbotron">
+        <h1 class="display-4">Find the Service you need</h1>
+        <p class="lead">What are you looking for? 🕵🏽‍♂️</p>
+        <hr class="my-4">
+        <p>Do you want people to find your service easily? Just add it here 😉</p>
+        <p><%= link_to 'New Service', new_task_path, class:"btn btn-primary btn-lg"  %></p>
+      </div>
+    </div>
+  </div>
+</div>
 

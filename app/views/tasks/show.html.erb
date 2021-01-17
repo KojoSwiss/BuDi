@@ -2,6 +2,8 @@
 <p><%= @task.description %></p>
 <p><%= @task.company %></p>
 <p><%= time_ago_in_words(@task.created_at) %></p>
+<p><a href='<%= @task.url %>' target="_blank"> Contact</a></p>
+
 
 <%= link_to 'Home', tasks_path %> |
 <%= link_to  'Edit', edit_task_path(@task) %> |
