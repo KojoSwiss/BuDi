@@ -7,7 +7,7 @@ Task.destroy_all
 500.times do
   task = Task.new(
     title: Faker::Company.profession,
-    description: Faker::Company.catch_phrase,
+    description: Faker::Lorem.paragraphs(rand(2..8)).join('\n'),
     company: Faker::Movies::LordOfTheRings.character,
     url: Faker::Internet.url,
     category_id: rand(1..6),
