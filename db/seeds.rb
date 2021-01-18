@@ -4,7 +4,7 @@ puts 'Cleaning the database'
 
 Task.destroy_all
 
-10.times do
+200.times do
   task = Task.new(
     title: Faker::Company.profession,
     description: Faker::Lorem.paragraphs(rand(2..8)).join('\n'),
