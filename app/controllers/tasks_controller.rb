@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :find_task, only: [:show, :edit, :update, :destroy]
+  before_action :find_task, only: [:show, :edit, :update, :destroy, :upvote]
   before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :destroy]
 
   def index
@@ -53,7 +53,9 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
-  def contact
+  def upvote
+    @task.upvote_by current_user
+    redirect_to :back
   end
 
   private
