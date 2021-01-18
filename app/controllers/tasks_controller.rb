@@ -54,8 +54,12 @@ class TasksController < ApplicationController
   end
 
   def upvote
-    @task.upvote_by current_user
-    redirect_to :back
+    if current_user.voted_for? @task
+      @task.unliked_by current_user
+    else
+    @task.liked_by current_user
+    end
+    redirect_to task_path
   end
 
   private
