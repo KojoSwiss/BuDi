@@ -4,7 +4,7 @@
   <%= f.input :description, label: "Service Description" %>
   <%= f.input :company, label: "Your Company" %>
   <%= f.input :location, label: "Where are you located", placeholder: "Tema" %>
-  <%= f.input :url, label: "Link to Service" %>
+  <%= f.input :url, required: false, label: "Link to Service" %>
   <%= f.button :submit %>
   <br>
 <% end %>
