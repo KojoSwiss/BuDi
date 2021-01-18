@@ -1,22 +1,33 @@
 <div class="card w-75">
   <div class="card-body">
-    <h5 class="card-title"><%= @task.title %></h5>
+    <h5 class="card-title"><%= @task.title.upcase %></h5>
     <p class="card-text"><%= @task.description %></p>
     <p class="card-text"><%= @task.company %></p>
     <p class="card-text"><%= time_ago_in_words(@task.created_at) %></p>
-    <p><a href='<%= @task.url %>' target="_blank" class= 'btn btn-primary'> Contact</a></p>
+    <button class="positive ui button">Call us on ...</button>
   </div>
 </div>
 
-
-<% if @task.user_id == current_user.id %>
-  <%= link_to like_task_path(@task), method: :put, remote: :true, class:'btn btn-primary' do %>
-    <span><i class="fas fa-smile-wink"></i></span>
-    <%= @task.get_upvotes.size %>
+<div class="ui labeled button" tabindex="0">
+  <div class="ui button">
+    <%= link_to like_task_path(@task), method: :put, remote: :true do %>
+    <i class="heart icon"></i> Like
+    </div>
+    <a class="ui basic label">
+      <%= @task.get_upvotes.size %>
+    </a>
   <% end %>
-  <%= link_to 'Home', tasks_path %> |
-  <%= link_to  'Edit', edit_task_path(@task) %> |
-  <%= link_to 'Delete', task_path(@task), method: :delete, data: { confirm: "Are you sure?" }  %>
-<% else %>
-  <%= link_to 'Home', tasks_path %>
-<% end %>
+</div>
+
+<a href='<%= @task.url %>' target="_blank" class="ui circular facebook icon button">
+  <i class="facebook icon"></i>
+</a>
+<button class="ui circular twitter icon button">
+  <i class="twitter icon"></i>
+</button>
+<button class="ui circular linkedin icon button">
+  <i class="linkedin icon"></i>
+</button>
+<button class="ui circular google plus icon button">
+  <i class="google plus icon"></i>
+</button>

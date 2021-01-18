@@ -1,10 +1,10 @@
-<%= simple_form_for @task, defaults: { input_html: { class: 'form-horizontal' } } do |f| %>
-  <%= f.collection_select :category_id, Category.all, :id, :name, { prompt: "Choose a Category"} %>
+<%= simple_form_for @task, defaults: { input_html: { class: 'field' } } do |f| %>
   <%= f.input :title, label: "Service title" %>
+  <p><%= f.collection_select :category_id, Category.all, :id, :name, { prompt: "Choose a Category"} %></p>
   <%= f.input :description, label: "Service Description" %>
   <%= f.input :company, label: "Your Company" %>
   <%= f.input :location, label: "Where are you located", placeholder: "Tema" %>
-  <%= f.input :url, label: "Link to Service" %>
-  <%= f.button :submit %>
+  <%= f.input :url,  label: "Facebook Page", placeholder: "https://www.facebook.com/my.business.page" %>
+  <%= f.button :submit, label: "Create Service" %>
   <br>
 <% end %>
