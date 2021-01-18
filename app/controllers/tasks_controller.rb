@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
-  before_action :find_task, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
+  before_action :find_task, only: [:show, :edit, :update, :destroy, :upvote]
+  before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :destroy]
 
   def index
     # if params[:category].blank?
@@ -53,13 +53,19 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
-  def contact
+  def upvote
+    if current_user.voted_for? @task
+      @task.unliked_by current_user
+    else
+    @task.liked_by current_user
+    end
+    redirect_to task_path
   end
 
   private
 
   def tasks_params
-    params.require(:task).permit(:title, :description, :company, :url, :category_id)
+    params.require(:task).permit(:title, :description, :company, :url, :category_id, :location)
   end
 
   def find_task

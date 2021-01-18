@@ -18,7 +18,8 @@
       <% num += 1 %>
 
       <h2><%= num %> | <%= link_to task.title, task_path(task) %></h2>
-      <p><%= task.company %></p>
+      <p> <em>Company name: </em> <%= task.company %></p>
+      <p> <em> Location: </em> <%= task.location %></p>
     <% end %>
   </div>
   <div class="col-md-5">

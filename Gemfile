@@ -32,6 +32,7 @@ gem 'devise'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 gem 'rubocop-faker'
 gem 'pg_search'
+gem 'acts_as_votable'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
