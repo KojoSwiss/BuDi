@@ -1,22 +1,24 @@
 <div class="card w-75">
   <div class="card-body">
-    <h5 class="card-title"><%= @task.title %></h5>
+    <h5 class="card-title"><%= @task.title.upcase %></h5>
     <p class="card-text"><%= @task.description %></p>
     <p class="card-text"><%= @task.company %></p>
     <p class="card-text"><%= time_ago_in_words(@task.created_at) %></p>
-    <p><a href='<%= @task.url %>' target="_blank" class= 'btn btn-primary'> Contact</a></p>
+    <p><a href='<%= @task.url %>' target="_blank" class= 'btn btn-success'> Contact</a></p>
   </div>
 </div>
 
 
-<% if @task.user_id == current_user.id %>
   <%= link_to like_task_path(@task), method: :put, remote: :true, class:'btn btn-primary' do %>
     <span><i class="fas fa-smile-wink"></i></span>
     <%= @task.get_upvotes.size %>
   <% end %>
   <%= link_to 'Home', tasks_path %> |
+  <%= link_to 'Back', :back %> |
+<% if @task.user_id == current_user.id %>
   <%= link_to  'Edit', edit_task_path(@task) %> |
   <%= link_to 'Delete', task_path(@task), method: :delete, data: { confirm: "Are you sure?" }  %>
 <% else %>
-  <%= link_to 'Home', tasks_path %>
+  <%= link_to 'Home', tasks_path %> |
+  <%= link_to 'Back', :back %>
 <% end %>
