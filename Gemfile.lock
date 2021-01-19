@@ -239,7 +239,6 @@ GEM
       activemodel (>= 5.0)
     social-share-button (1.2.3)
       coffee-rails
-    social_share (0.2.4)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -310,7 +309,6 @@ DEPENDENCIES
   semantic-ui-sass
   simple_form
   social-share-button
-  social_share
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
