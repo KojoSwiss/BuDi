@@ -33,7 +33,7 @@ puts 'Creating Tasks'
     title: Faker::Company.profession,
     description: Faker::Lorem.paragraphs,
     company: Faker::Movies::LordOfTheRings.character,
-    category_id: 1,
+    category_id: rand(1..6),
     user_id: rand(1..6),
     location: Faker::Address.city
     )
