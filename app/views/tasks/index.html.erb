@@ -1,10 +1,10 @@
-<div class="row justify-content-center">
+<div class="row justify-content-center mt-4">
   <div class="col-md-10">
     <%= form_tag tasks_path, method: :get do %>
     <%= text_field_tag :query,
     params[:query],
     class: "form-control",
-    placeholder: "Find a Service"
+    placeholder: "Search for the service you want"
   %>
   <%= submit_tag "Search", class: "btn btn-primary mb-2 mt-2" %>
 <% end %>
@@ -26,10 +26,9 @@
   <div class="col-md-5">
     <div class="ontop">
       <div class="jumbotron">
-        <h1 class="display-4">Find the Service you need</h1>
-        <p class="lead">What are you looking for? 🕵🏽‍♂️</p>
+        <h1 class="display-4">Join Now for FREEEEE!!!!, </h1>
+        <p class="lead">Add your service here 😉, and let your customer find you easily</p>
         <hr class="my-4">
-        <p>Do you want people to find your service easily? Just add it here 😉</p>
         <p><%= link_to 'New Service', new_task_path, class:"btn btn-primary btn-lg"  %></p>
       </div>
     </div>
