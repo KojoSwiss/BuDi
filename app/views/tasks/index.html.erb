@@ -19,9 +19,10 @@
       <h2><%= num %> | <%= link_to task.title.capitalize, task_path(task) %> | <%= link_to task.get_upvotes.size, like_task_path(task), method: :put, remote: :true, class:'btn btn-default'%> Likes</h2>
       <p> <em>Company name: </em> <%= task.company %></p>
       <p> <em> Location: </em> <%= task.location %></p>
+      <hr>
     <% end %>
-
   </div>
+
   <div class="col-md-5">
     <div class="ontop">
       <div class="jumbotron">
