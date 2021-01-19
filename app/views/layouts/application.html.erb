@@ -13,7 +13,7 @@
   </head>
 
   <body>
-      <%= render 'shared/navbar' %>
+      <%= render 'shared/navbar'  %>
     <div class="container">
       <nav class="navbar sticky-top navbar-light bg-light">
       <%= link_to 'All Services', tasks_path %> |
@@ -22,7 +22,6 @@
         <% end %>
       </nav>
       <%= render 'shared/flashes' %>
-
       <%= yield %>
     </div>
   </body>
