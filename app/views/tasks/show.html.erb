@@ -4,11 +4,20 @@
     <p class="card-text"><%= @task.description %></p>
     <p class="card-text"><%= @task.company %></p>
     <p class="card-text"><%= time_ago_in_words(@task.created_at) %></p>
-    <button class="positive ui button">Call us on ...</button>
+    <button class="positive ui button">Get in touch ...</button>
+    <a href='http://www.facebook.com/<%= @task.url %>' target="_blank" class="ui circular facebook icon button">
+      <i class="facebook icon"></i>
+    </a>
+    <a href='http://www.twitter.com/<%= @task.Tw_url %>' target="_blank" class="ui circular twitter icon button">
+      <i class="twitter icon"></i>
+    </a>
+    <a href='http://www.instagram.com/<%= @task.Ig_url %>' target="_blank" class="ui circular instagram icon button">
+      <i class="instagram icon"></i>
+    </a>
   </div>
 </div>
 
-<div class="ui labeled button mt-4" tabindex="0">
+<div class=" ui labeled button mt-4" tabindex="0">
   <div class="ui button">
     <%= link_to like_task_path(@task), method: :put, remote: :true do %>
     <i class="heart icon"></i> Like
@@ -19,15 +28,7 @@
   <% end %>
 </div>
 
-<a href='http://www.facebook.com/<%= @task.url %>' target="_blank" class="ui circular facebook icon button">
-  <i class="facebook icon"></i>
-</a>
-<a href='http://www.twitter.com/<%= @task.Tw_url %>' target="_blank" class="ui circular twitter icon button">
-  <i class="twitter icon"></i>
-</a>
-<a href='http://www.instagram.com/<%= @task.Ig_url %>' target="_blank" class="ui circular instagram icon button">
-  <i class="instagram icon"></i>
-</a>
+
 
 
 <div class="mt-4">
