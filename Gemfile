@@ -42,6 +42,7 @@ gem 'social-share-button'
 
 
 
+
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'

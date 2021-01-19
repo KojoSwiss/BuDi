@@ -1,9 +1,5 @@
 require "open-uri"
 
-User.destroy_all
-Category.destroy_all
-Task.destroy_all
-
 puts 'Creating categories'
 
 list= ["Food/Catering Services", "Handyman Services", "Makeup/Bodyworks Services", "Photo/Video Service", "Delivery Services", "Other Services" ]
