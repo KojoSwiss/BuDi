@@ -2,6 +2,8 @@ require "open-uri"
 
 puts 'Creating categories'
 
+Category.destroy_all
+
 list= ["Food/Catering Services", "Handyman Services", "Makeup/Bodyworks Services", "Photo/Video Service", "Delivery Services", "Other Services" ]
 
 for i in list
