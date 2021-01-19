@@ -1,6 +1,51 @@
 require "open-uri"
 
-puts 'Cleaning the database'
+puts 'Creating categories'
+
+category = Category.new(
+  name: "Food/Catering Services"
+  )
+  category.save!
+
+category = Category.new(
+  name: "Handyman Services"
+  )
+  category.save!
+
+category = Category.new(
+  name: "Makeup/Bodyworks Services"
+  )
+  category.save!
+
+category = Category.new(
+  name: "Photo/Video Service"
+  )
+  category.save!
+
+category = Category.new(
+  name: "Delivery Services"
+  )
+  category.save!
+
+category = Category.new(
+  name: "Other Services"
+  )
+  category.save!
+
+puts 'Creating users'
+
+10.times do
+  user = User.new(
+    email: Faker::Internet.email,
+    password: "123456",
+    )
+    puts "#{user.email} created"
+    user.save!
+end
+
+puts 'Users created'
+
+puts 'Creating Tasks'
 
 Task.destroy_all
 
@@ -20,15 +65,3 @@ Task.destroy_all
 end
 puts 'Done'
 
-puts 'Creating users'
-
-10.times do
-  user = User.new(
-    email: Faker::Internet.email,
-    password: "123456",
-    )
-    puts "#{user.email} created"
-    user.save!
-end
-
-puts 'Users created'
