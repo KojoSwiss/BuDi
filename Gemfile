@@ -38,7 +38,7 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'semantic-ui-sass'
-gem 'social-share-button'
+
 
 
 

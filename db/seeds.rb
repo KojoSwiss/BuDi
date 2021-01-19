@@ -1,10 +1,8 @@
 require "open-uri"
 
-User.destroy_all
-Category.destroy_all
-Task.destroy_all
-
 puts 'Creating categories'
+
+Category.destroy_all
 
 list= ["Food/Catering Services", "Handyman Services", "Makeup/Bodyworks Services", "Photo/Video Service", "Delivery Services", "Other Services" ]
 
@@ -37,7 +35,7 @@ puts 'Creating Tasks'
     title: Faker::Company.profession,
     description: Faker::Lorem.paragraphs,
     company: Faker::Movies::LordOfTheRings.character,
-    category_id: 1,
+    category_id: rand(1..6),
     user_id: rand(1..6),
     location: Faker::Address.city
     )
