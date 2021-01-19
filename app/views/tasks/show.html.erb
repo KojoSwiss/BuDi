@@ -5,7 +5,7 @@
     <p class="card-text"><%= @task.company %></p>
     <p class="card-text"><%= time_ago_in_words(@task.created_at) %></p>
     <p> <em>Submitted by: </em> <%= @task.user.email %></p>
-    <button class="positive ui button">Get in touch ...</button>
+    <button class="positive ui button">Contact us on ...</button>
     <a href='http://www.facebook.com/<%= @task.url %>' target="_blank" class="ui circular facebook icon button">
       <i class="facebook icon"></i>
     </a>
