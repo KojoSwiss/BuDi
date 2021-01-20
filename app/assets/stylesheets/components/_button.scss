@@ -5,6 +5,7 @@
   border-radius: 5px;
   padding: 20px 30px;
   width: 100%;
+  margin: auto;
   text-align: center;
   position: sticky;
   top: 100px;
@@ -19,15 +20,17 @@
 .btn-center {
  margin: auto;
 
+
 }
 
 .btn-search {
-  background: #167FFB;
-  border: 1px solid #808080;
-  color: white;
+
+  border: 1px solid white;
+  color: #167FFB;
+
   font-style: 26px;
   border-radius: 5px;
-  padding: 4px 4px;
+  padding: 4px 8px;
   width: 100%;
   text-align: center;
   position: sticky;
