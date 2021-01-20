@@ -10,7 +10,8 @@
   top: 100px;
    &:hover {
         color:white;
-        background: red;
+        background: #167FFB;
+        opacity: 0.3;
         text-decoration: none;
     }
 }
@@ -18,4 +19,20 @@
 .btn-center {
  margin: auto;
 
+}
+
+.btn-search {
+  background: #167FFB;
+  color: white;
+  font-style: 26px;
+  border-radius: 5px;
+  padding: 4px 4px;
+  width: 100%;
+  text-align: center;
+   &:hover {
+        color:white;
+        background: #167FFB;
+        opacity: 0.3;
+        text-decoration: none;
+    }
 }
