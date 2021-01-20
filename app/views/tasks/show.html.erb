@@ -2,9 +2,10 @@
   <div class="card-body">
     <div class="header"><%= @task.title.upcase %></div>
     <div class="meta"><%= time_ago_in_words(@task.created_at) %></div>
+    <div> <em>Submitted by: </em> <%= @task.user.email %></div>
+    <hr class="my-4">
     <p class="card-text"><%= @task.description %></p>
     <p class="card-text">Business name : <%= @task.company %></p>
-    <p> <em>Submitted by: </em> <%= @task.user.email %></p>
     <hr class="my-4">
     <button class="positive ui button mb-3">Contact us on ...</button>
 

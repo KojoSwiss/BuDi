@@ -19,8 +19,7 @@
     <% num = 0 %>
     <% @tasks.each do |task| %>
       <% num += 1 %>
-      <h4><%= num %> | <%= link_to task.title.capitalize, task_path(task) %>| <%= time_ago_in_words(task.created_at) %> | <%= link_to task.get_upvotes.size, like_task_path(task), method: :put, remote: :true, class:'btn btn-default'%> Likes</h4>
-      <p> <em> Location: </em> <%= task.location %></p>
+      <p><%= num %> | <%= link_to task.title.capitalize, task_path(task) %>| <em> Location: </em> <%= task.location %> | <em><%= time_ago_in_words(task.created_at) %></em> | <%= link_to task.get_upvotes.size, like_task_path(task), method: :put, remote: :true, class:'btn btn-default'%>Likes</p>
       <hr>
     <% end %>
   </div>
