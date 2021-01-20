@@ -5,12 +5,14 @@
   border-radius: 5px;
   padding: 20px 30px;
   width: 100%;
+  margin: auto;
   text-align: center;
   position: sticky;
   top: 100px;
    &:hover {
         color:white;
-        background: red;
+        background: #167FFB;
+        opacity: 0.2;
         text-decoration: none;
     }
 }
@@ -18,4 +20,25 @@
 .btn-center {
  margin: auto;
 
+
+}
+
+.btn-search {
+
+  border: 1px solid white;
+  color: #167FFB;
+
+  font-style: 26px;
+  border-radius: 5px;
+  padding: 4px 8px;
+  width: 100%;
+  text-align: center;
+  position: sticky;
+  top: 100px;
+   &:hover {
+        color:white;
+        background: #167FFB;
+        opacity: 0.2;
+        text-decoration: none;
+    }
 }
