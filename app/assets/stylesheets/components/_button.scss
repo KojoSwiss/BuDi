@@ -11,7 +11,7 @@
    &:hover {
         color:white;
         background: #167FFB;
-        opacity: 0.3;
+        opacity: 0.2;
         text-decoration: none;
     }
 }
@@ -23,16 +23,19 @@
 
 .btn-search {
   background: #167FFB;
+  border: 1px solid #808080;
   color: white;
   font-style: 26px;
   border-radius: 5px;
   padding: 4px 4px;
   width: 100%;
   text-align: center;
+  position: sticky;
+  top: 100px;
    &:hover {
         color:white;
         background: #167FFB;
-        opacity: 0.3;
+        opacity: 0.2;
         text-decoration: none;
     }
 }
