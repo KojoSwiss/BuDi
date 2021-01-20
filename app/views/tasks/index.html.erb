@@ -8,6 +8,9 @@
   %>
   <%= submit_tag "Search", class: "btn btn-primary mb-2 mt-2" %>
 <% end %>
+  <div class="d-md-none">
+    <p style="position: sticky;"><%= link_to 'New Service', new_task_path, class:"btn btn-success btn-md"  %></p>
+  </div>
   </div>
 </div>
 
@@ -23,7 +26,7 @@
     <% end %>
   </div>
 
-  <div class="col-md-7 col-xs-2">
+  <div class="col-md-7 col-xs-2 ">
     <div class="ontop">
       <div class="jumbotron">
         <h1 class="display-4">Join Now for FREEEEE!!!!, </h1>
