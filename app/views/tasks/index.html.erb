@@ -8,12 +8,12 @@
   %>
   <%= submit_tag "Search", class: "btn btn-primary mb-2 mt-2" %>
 <% end %>
-  <div class="d-md-none">
-    <p style="position: top; width: 228px;"><%= link_to 'Add a Service', new_task_path, class:"positive ui button"  %></p>
-  </div>
   </div>
 </div>
 
+<div class="row mt-4 mb-4 d-md-none col-md-5 col-xs-2 btn-center sticky-top">
+  <%= link_to 'Add a Service', new_task_path, class:"btn-small"  %>
+</div>
 <div class="row">
   <div class="col-md-5 col-xs-2">
     <% num = 0 %>

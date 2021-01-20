@@ -1,0 +1,20 @@
+.btn-small {
+  background: #167FFB;
+  color: white;
+  font-style: 26px;
+  border-radius: 5px;
+  padding: 20px 30px;
+  width: 100%;
+  text-align: center;
+  position: sticky;
+   &:hover {
+        color:white;
+        background: red;
+        text-decoration: none;
+    }
+}
+
+.btn-center {
+ margin: auto;
+
+}
