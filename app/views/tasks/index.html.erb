@@ -3,13 +3,13 @@
     <div class="intro">
       <h2> Find all the services for you need</h2>
       <%= form_tag tasks_path, method: :get do %>
-      <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Search by service or location"
-    %>
-    <%= submit_tag "Search", class: "mb-2 mt-2 btn-search"%>
-  <% end %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Search by service or location"
+        %>
+      <%= submit_tag "Search", class: "mb-2 mt-2 btn-search"%>
+      <% end %>
     </div>
   </div>
 </div>

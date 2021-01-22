@@ -78,6 +78,6 @@
       <%= link_to "Back", tasks_path, class:"ui olive button" %>
       <%= link_to "Delete", task_path(@task), method: :delete, data: { confirm: "Are you sure?" }, class:"ui red button" %>
     <% else %>
-      <%= link_to "Back", :back, class:"ui olive button" %>
+      <%= link_to "Back", tasks_path, class:"ui olive button" %>
     <% end %>
 </div>
