@@ -1,0 +1,14 @@
+ <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Sort by Genre
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <ul>
+      <% Category.all.each do |category| %>
+        <li class=" <%= 'active'if params[:category] == category.name %>">
+          <%= link_to category.name, tasks_path(category: category.name), class:'dropdown-item' %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

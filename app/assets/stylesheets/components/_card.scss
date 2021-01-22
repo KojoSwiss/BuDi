@@ -1,33 +1,43 @@
 .main-landing {
   display: flex;
-  height: 50vh;
-  background-color: #FF3CAC;
-  background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+  height: 60vh;
+  background-image: linear-gradient( 135deg, #43CBFF 10%, #9708CC 100%);
   justify-content: center;
   text-align: center;
   border-radius: 8px;
 }
 
 .center-card {
-  margin: 32px auto;
+  margin: 16px auto;
   padding: 8px;
-  background-image: linear-gradient( 109.6deg,  rgba(121,203,202,1) 11.2%, rgba(119,161,211,1) 91.1% );
   border-radius: 8px;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  text-align: left;
 }
 
 .center-card h1 {
   font-family: 'Lobster', cursive;
+  font-weight: bold;
   color: white;
 }
 
 .center-card p {
   font-family: 'Fraunces', serif;
+  font-weight: bold;
   color: white;
 }
 
 .home-new-service {
   font-family: 'Fraunces', serif;
   color: white;
-  margin-top: 24px;
+}
+
+.btn-search {
+  background: #8C1BAB;
+  border-radius: 4px;
+  padding: 8px;
+  color: white;
+  &:hover {
+        color:red;
+        text-decoration: none;
+    }
 }
