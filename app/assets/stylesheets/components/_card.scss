@@ -5,14 +5,13 @@
   background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
   justify-content: center;
   text-align: center;
+  border-radius: 8px;
 }
 
 .center-card {
-  margin: 0 auto;
+  margin: 32px auto;
   padding: 8px;
   background-image: linear-gradient( 109.6deg,  rgba(121,203,202,1) 11.2%, rgba(119,161,211,1) 91.1% );
-  margin-top: 24px;
-
   border-radius: 8px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
