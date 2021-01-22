@@ -7,7 +7,7 @@ class TasksController < ApplicationController
     if params[:query].present?
       @tasks = Task.search_by_title_and_description(params[:query])
     elsif params[:category].blank?
-      @tasks = Task.all.order('created_at DESC')
+      @tasks = Task.all.order('title ASC')
     else
       @category_id = Category.find_by(name: params[:category]).id
       @tasks = Task.where(category_id: @category_id).order('cached_votes_total DESC')
