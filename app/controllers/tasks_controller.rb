@@ -3,13 +3,6 @@ class TasksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :destroy]
 
   def index
-    # if params[:category].blank?
-    #   @tasks = Task.all.order('created_at DESC')
-    # else
-    #   @category_id = Category.find_by(name: params[:category]).id
-    #   @tasks = Task.where(category_id: @category_id).order('created_at DESC')
-    # end
-
     # PG Search
     if params[:query].present?
       @tasks = Task.search_by_title_and_description(params[:query])
@@ -17,7 +10,7 @@ class TasksController < ApplicationController
       @tasks = Task.all.order('created_at DESC')
     else
       @category_id = Category.find_by(name: params[:category]).id
-      @tasks = Task.where(category_id: @category_id).order('created_at DESC')
+      @tasks = Task.where(category_id: @category_id).order('cached_votes_total DESC')
     end
   end
 
@@ -62,10 +55,13 @@ class TasksController < ApplicationController
     redirect_to task_path
   end
 
+  def address
+  end
+
   private
 
   def tasks_params
-    params.require(:task).permit(:title, :description, :company, :url, :category_id, :location, :Ig_url, :Tw_url)
+    params.require(:task).permit(:title, :description, :company, :url, :category_id, :location, :address, :Ig_url, :Tw_url)
   end
 
   def find_task
