@@ -1,20 +1,25 @@
-<div class="row main-landing" >
-  <div class="col-md-6">
-    <div class="center-card">
-      <h1>Seek and Find </h1>
-      <p>Looking for a service? Easy, just search for it below 😎</p>
-        <%= form_tag tasks_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Search by service or location"
-          %>
-          <%= submit_tag "Search", class: "mb-2 mt-2 btn-search "%>
-        <% end %>
+<%= render 'shared/header' %>
+<div class="how-it-works-title">
+  <h2>How it works &mdash; As Simple as 1, 2, 3</h2>
+</div>
+<div class="section-how-it-works">
+  <div class="col span-1-of-2 steps-box">
+    <%= image_tag 'boy.png' %>
+  </div>
+  <div class="col span-1-of-2 step-box">
+    <div class="works-step clearfix">
+      <div>1</div>
+      <p>Search for the service you need</p>
     </div>
-    <div class="home-new-service">
-      <p> Else add a <%= link_to 'new service', new_task_path, class:"ui positve button" %></p>
+    <div class="works-step clearfix">
+      <div>2</div>
+      <p>Select a service provided based on revies and likes</p>
+    </div>
+    <div class="works-step clearfix">
+      <div>3</div>
+      <p>Contact the service provider via a social media link</p>
     </div>
   </div>
 </div>
+
 
