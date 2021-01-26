@@ -1,3 +1,13 @@
+body {
+  background-color: #fff;
+  color: #555;
+  font-family: 'Lato', 'Arial', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
 h1,
 h2,
 h3 {
@@ -46,6 +56,12 @@ header {
   background-attachment: fixed;
 }
 
+.long-copy {
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+}
+
 .logo img {
   height: 40px;
   width: auto;
@@ -76,6 +92,10 @@ header {
     }
 }
 
+.main-nav li a {
+  color: #fff;
+}
+
 .steps-box:first-child {
   text-align: right;
   padding-right: 3%
@@ -89,7 +109,7 @@ header {
 }
 
 .section-how-it-works {
-
+  background: #f9f9f9;
 }
 
 .how-it-works-title {
@@ -120,15 +140,80 @@ header {
     padding: 5px;
 }
 
+.features {
+  margin-top: 60px;
+}
 
+.feature-box {
+  text-align: center;
+}
 
+.section-features .long-copy {
+    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-left: 16px;
+}
 
+.section-images {
+  padding: 0;
+  margin-top: 60px;
 
+}
 
+.showcase {
+  list-style: none;
+  width: 100%;
+}
 
+.showcase li {
+  display: block;
+  float: left;
+  width: 25%;
+}
 
+.service-photo {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+}
 
+.service-photo img {
+  opacity: 0.7;
+  width: 100%;
+  height: auto;
+  object-fit:cover;
+  -webkit-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15);
+  -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+    &:hover {
+    opacity: 1;
+    -webkit-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    transform: scale(1.03);
+    }
+}
 
+.feature-box i {
+  color: #e67e22;
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.city-features {
+  margin-bottom: 5px;
+}
+
+.cities h2 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 
 
 
