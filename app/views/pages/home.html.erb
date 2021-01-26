@@ -1,20 +1,247 @@
-<div class="row main-landing" >
-  <div class="col-md-6">
-    <div class="center-card">
-      <h1>Seek and Find </h1>
-      <p>Looking for a service? Easy, just search for it below 😎</p>
-        <%= form_tag tasks_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Search by service or location"
-          %>
-          <%= submit_tag "Search", class: "mb-2 mt-2 btn-search "%>
-        <% end %>
-    </div>
-    <div class="home-new-service">
-      <p> Else add a <%= link_to 'new service', new_task_path, class:"ui positve button" %></p>
+<%= render 'shared/header' %>
+
+  <div class="how-it-works-title">
+    <h2>Find the Service you need in minutes</h2>
+    <p class="long-copy">Hello, we're Serv GH, your new premium  platform helps to you find whatever servives you may require. We know its hard to find reliable services and we understand the risks in hiring people without knowing if they can do the work. So let us help you, let us do it together and as they say, if you want to go far ... go together!</p>
+  </div>
+
+  <div class="section-features">
+    <div class="row features">
+      <div class="col-md-4 feature-box">
+        <i class="far fa-smile-wink fa-5x"></i>
+        <h3>Easy to use</h3>
+        <p class="long-copy"> We offer an easy to use platform with thousands of listed services. All you have to do is search for the service you require, select a provider based on likes and user reviews and lastly have a look on their social media page for thier details </p>
+      </div>
+      <div class="col-md-4 feature-box">
+        <i class="fas fa-stopwatch-20 fa-5x"></i>
+        <h3>Convinient</h3>
+        <p class="long-copy"> No need to call a friend or a family member to ask if they know someone who can help you, you can search and find within minutes </p>
+      </div>
+      <div class="col-md-4 feature-box">
+        <i class="fas fa-globe-africa fa-5x"></i>
+        <h3>Global reach</h3>
+        <p class="long-copy"> It doesn't matter where you are in the world, you can order a service in Ghana with just a few clicks</p>
+      </div>
     </div>
   </div>
-</div>
+
+  <div class="section-images">
+    <div class="how-it-works-title">
+    <h2>Select from multiple services</h2>
+  </div>
+    <ul class="showcase clearfix">
+      <li>
+        <figure class="service-photo">
+          <%= image_tag '1.jpg' %>
+        </figure>
+      </li>
+       <li>
+        <figure class="service-photo">
+          <%= image_tag '2.jpg' %>
+        </figure>
+      </li>
+       <li>
+        <figure class="service-photo">
+          <%= image_tag '3.jpg' %>
+        </figure>
+      </li>
+       <li>
+        <figure class="service-photo">
+          <%= image_tag '4.jpg' %>
+        </figure>
+      </li>
+    </ul>
+    <ul class="showcase clearfix">
+      <li>
+        <figure class="service-photo">
+          <%= image_tag '5.jpg' %>
+        </figure>
+      </li>
+       <li>
+        <figure class="service-photo">
+          <%= image_tag '6.jpg' %>
+        </figure>
+      </li>
+       <li>
+        <figure class="service-photo">
+          <%= image_tag '7.jpg' %>
+        </figure>
+      </li>
+       <li>
+        <figure class="service-photo">
+          <%= image_tag '8.jpg' %>
+        </figure>
+      </li>
+    </ul>
+  </div>
+
+  <div class="how-it-works-title">
+    <h2>How it works &mdash; As Simple as 1, 2, 3</h2>
+  </div>
+  <div class="section-how-it-works">
+    <div class="row">
+      <div class="col-md-6 steps-box">
+        <%= image_tag 'boy.png' %>
+      </div>
+      <div class="col-md-6 steps-box">
+        <div class="works-step clearfix">
+          <div>1</div>
+          <p>Search for the service you need</p>
+        </div>
+        <div class="works-step clearfix">
+          <div>2</div>
+          <p>Select a service provider based on customer reviews and likes</p>
+        </div>
+        <div class="works-step clearfix">
+          <div>3</div>
+          <p>Contact the service provider via a social media link</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cities">
+      <h2>We are currently in these cities</h2>
+    <div class="row">
+      <div class="col-md-3 box city-features">
+        <div class="card" style="width: 18rem;">
+          <%= image_tag 'berlin.jpg' %>
+          <div class="card-body">
+            <p class="card-text">Accra</p>
+          </div>
+          <div class="card-body">
+            <i class="fas fa-people-carry"></i>
+            <span>1200+ Service Providers</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 box city-features">
+        <div class="card" style="width: 18rem;">
+          <%= image_tag 'san-francisco.jpg' %>
+          <div class="card-body">
+            <p class="card-text">Kumaso</p>
+          </div>
+          <div class="card-body">
+            <i class="fas fa-people-carry"></i>
+            <span>1450+ Service Providers</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 box city-features">
+        <div class="card" style="width: 18rem;">
+          <%= image_tag 'lisbon-3.jpg' %>
+          <div class="card-body">
+            <p class="card-text">Tema</p>
+          </div>
+          <div class="card-body">
+            <i class="fas fa-people-carry"></i>
+            <span>650+ Service Providers</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 box city-features">
+        <div class="card" style="width: 18rem;">
+          <%= image_tag 'london.jpg' %>
+          <div class="card-body">
+            <p class="card-text">Takoradi</p>
+          </div>
+          <div class="card-body">
+            <i class="fas fa-people-carry"></i>
+            <span>550+ Service Providers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="testimonials">
+      <h2>Our customers can't live without us</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-3">
+        <blockquote>
+          This is a real life server. I can know have some confidence in hiring a stranger for a service.
+          <cite><%= image_tag 'boy.png' %> Alberto Duncan</cite>
+        </blockquote>
+      </div>
+      <div class="col-md-3">
+        <blockquote>
+          At least I was reluctant to try it and them it's free so why not and now I can confidently say I will recommend serv Gh.
+          <cite><%= image_tag 'smile.jpg' %> Elizabeth Mensah</cite>
+        </blockquote>
+      </div>
+      <div class="col-md-3">
+        <blockquote>
+          Nice, easy and simple to use. I trust it. And I will recommend it to everyone. And best of all, it is proudly Ghanaian.
+          <cite><%= image_tag 'girl.png' %> Kofi Jackson</cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-plans">
+    <h2>Join us today <br> All plans are free!!! </h2>
+    <p class="long-copy">Let your good, professional work speak for itself and let your customers find you much easier. </p>
+    <div class="row justify-content-center">
+      <div class="col-md-3">
+        <div class="plan-box">
+          <div>
+            <h3>Premium</h3>
+            <p class="plan-price">$399 <span>/ month</span></p>
+            <p class="plan-price-meal">Most popular choice</p>
+            </div>
+          <div>
+            <ul>
+              <li><i class="far fa-check-square"></i>Promoted Services</li>
+              <li><i class="far fa-check-square"></i>24/7 Customer help</li>
+              <li><i class="far fa-check-square"></i>Business consultation</li>
+              <li><i class="far fa-check-square"></i>Full business analysts </li>
+            </ul>
+          </div>
+          <div>
+            <a href="#" class="btn btn-full">Sign up now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="plan-box">
+          <div>
+            <h3>Pro</h3>
+            <p class="plan-price">$149 <span>/ month</span></p>
+            <p class="plan-price-meal">Best for matured business owners</p>
+          </div>
+          <div>
+            <ul>
+              <li><i class="far fa-check-square"></i>Promoted Services</li>
+              <li><i class="far fa-check-square"></i></i>Next day customer help</li>
+              <li><i class="far fa-check-square"></i></i>Business consultation</li>
+              <li><i class="far fa-check-square"></i> Basic free delivery</li>
+            </ul>
+          </div>
+          <div>
+            <a href="#" class="btn btn-ghost">Sign up now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="plan-box">
+          <div>
+            <h3>Starter</h3>
+            <p class="plan-price">19$ <span>/ meal</span></p>
+            <p class="plan-price-meal">Best for new business owners</p>
+          </div>
+          <div>
+            <ul>
+              <li><i class="far fa-check-square"></i> <strike>Promoted Services</strike></li>
+              <li><i class="far fa-check-square"></i>Order from 8 am to 12 pm</li>
+              <li><i class="fas fa-times"></i>Access to newest creations</li>
+              <li><i class="far fa-check-square"></i>Free delivery</li>
+            </ul>
+          </div>
+          <div>
+            <a href="#" class="btn btn-ghost">Sign up now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
