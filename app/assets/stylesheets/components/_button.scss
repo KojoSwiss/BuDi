@@ -18,6 +18,7 @@
     }
 }
 
+
 .btn-center {
  margin: auto;
 
@@ -60,5 +61,16 @@
    &:hover {
         color:#924d10;
         text-decoration: none;
+        background: #fff;
+    }
+}
+
+.btn-ghost {
+  border: 1px solid #e67e22;
+  color: #e67e22;
+    &:hover {
+      border: 1px solid transparent;
+      color: #fff;
+      background: #e67e22;
     }
 }
