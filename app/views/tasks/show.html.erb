@@ -1,4 +1,5 @@
-<div class="ui message mt-4">
+<div class="container">
+  <div class="ui message mt-4">
   <div class="card-body">
     <div class="header"><%= @task.title.upcase %></div>
     <div class="meta">Posted <%= time_ago_in_words(@task.created_at) %> ago</div>
@@ -81,3 +82,5 @@
       <%= link_to "Back", tasks_path, class:"ui olive button" %>
     <% end %>
 </div>
+</div>
+

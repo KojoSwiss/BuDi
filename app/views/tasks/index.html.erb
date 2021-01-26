@@ -1,6 +1,7 @@
 <%= render 'shared/navbar' %>
 <%= render 'shared/categoryList' %>
-<div class="row justify-content-center mt-4">
+<div class="container">
+  <div class="row justify-content-center mt-4">
   <div class="col-md-12">
     <div class="intro">
       <h2> Find all the services for you need</h2>
@@ -21,11 +22,11 @@
 </div>
 
 <div class="row mt-4">
-  <div class="col-md-5 col-lg-5">
+  <div class="col-md-5 col-lg-5 ">
     <% num = 0 %>
     <% @tasks.each do |task| %>
       <% num += 1 %>
-      <p><%= num %> | <%= link_to task.title.capitalize, task_path(task) %>| <em> Location: </em> <%= task.location %> | <em><%= time_ago_in_words(task.created_at) %></em> | <%= link_to task.get_upvotes.size, like_task_path(task), method: :put, remote: :true, class:'btn btn-default'%>Likes</p>
+      <p class="tasks-card"><%= num %> | <%= link_to task.title.capitalize, task_path(task) %>| <em> Location: </em> <%= task.location %> | <em><%= time_ago_in_words(task.created_at) %></em> | <%= link_to task.get_upvotes.size, like_task_path(task), method: :put, remote: :true %>Likes</p>
       <hr>
     <% end %>
   </div>
@@ -43,3 +44,5 @@
   </div>
 </div>
 
+
+</div>
