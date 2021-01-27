@@ -1,7 +1,7 @@
 <header>
   <nav>
     <div class="nav-row">
-      <div class="container">
+
         <%= link_to root_path, class: "logo" do %>
           <%= image_tag "robot3.png" %>
         <% end %>
@@ -11,9 +11,6 @@
         </li>
          <li class="nav-item active">
           <a class="nav-link" href="#"> Our Cities</a>
-        </li>
-         <li class="nav-item active">
-          <%= link_to "All Services", tasks_path, class: "nav-link" %>
         </li>
           <% if user_signed_in? %>
         <li class="nav-item active">
@@ -34,7 +31,7 @@
         </li>
       <% end %>
         </ul>
-      </div>
+
     </div>
   </nav>
   <div class="hero-text-card">
