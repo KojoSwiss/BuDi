@@ -41,7 +41,7 @@ h3 {
 }
 
 header {
-  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(home-background.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/assets/home-background.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -211,7 +211,7 @@ header {
 }
 
 .testimonials {
-  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(happypeople.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/assets/happypeople.jpg');
   background-size: cover;
   color: #fff;
   background-attachment: fixed;
