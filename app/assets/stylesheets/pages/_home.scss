@@ -49,10 +49,10 @@ header {
   width: 101%;
 }
 
-.long-copy {
+.long-copy p {
     line-height: 145%;
     width: 70%;
-    margin-left: 15%;
+    padding: 8px;
 }
 
 .logo img {
@@ -96,7 +96,7 @@ header {
 
 .steps-box:last-child {
   text-align: left;
-  padding-left: 3%;
+  padding-left: 8%;
   margin-top: 70px;
 
 }
@@ -201,6 +201,7 @@ header {
 
 .city-features {
   margin-bottom: 5px;
+  padding-left: 75px;
 }
 
 .cities h2 {
