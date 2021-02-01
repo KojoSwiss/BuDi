@@ -198,20 +198,23 @@ header {
 }
 
 .box img {
-    width: 100%;
+    width: 100px;
     height: auto;
     margin-bottom: 15px;
 }
 
 .city-features {
   margin-bottom: 5px;
-  padding-left: 75px;
 }
 
-.cities h2 {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding-top: 30px;
+.cities {
+  padding: 35px;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid red;
 }
 
 .testimonials {
