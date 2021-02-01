@@ -51,6 +51,7 @@ header {
 
 .long-copy {
   text-align: center;
+  padding: 15px;
 }
 
 .long-copy p {
@@ -91,6 +92,11 @@ header {
 
 .main-nav li a {
   color: #fff;
+}
+
+.steps-box img {
+  width: 100%;
+  padding: 15px;
 }
 
 .steps-box:first-child {
@@ -158,6 +164,7 @@ header {
 }
 
 .showcase {
+  padding-left: 15px;
   list-style: none;
   width: 100%;
 }
