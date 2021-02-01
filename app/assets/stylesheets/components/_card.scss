@@ -66,3 +66,21 @@
 .tasks-card li a {
   color: #1C8180;
 }
+
+.city-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.city-card {
+
+  // display: inline-block;
+}
+
+.city-card img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+
+}
