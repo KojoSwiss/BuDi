@@ -40,7 +40,8 @@ gem 'simple_form'
 gem 'semantic-ui-sass'
 
 gem 'geocoder'
-
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.16.0'
 
 
 
