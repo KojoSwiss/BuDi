@@ -103,16 +103,21 @@ header {
 }
 
 .steps-box img {
-  width: 100%;
   padding: 15px;
+  width: 100%;
+  border-radius: 0px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
 }
 
 .steps-box:first-child {
+
   text-align: right;
   padding-right: 3%
 }
 
 .steps-box:last-child {
+  display: grid;
   text-align: left;
   padding-left: 8%;
   margin-top: 70px;
