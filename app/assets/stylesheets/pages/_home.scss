@@ -247,6 +247,16 @@ header {
   padding: 20px
 }
 
+.list-of-services {
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(https://images.unsplash.com/photo-1608556984766-105e2dc59706?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGNob2ljZXN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+  background-size: cover;
+  color: #fff;
+  background-attachment: fixed;
+  text-align: center;
+  margin-top: 70px;
+  padding: 20px
+}
+
 blockquote {
     padding: 2%;
     font-style: italic;
@@ -342,4 +352,18 @@ cite img {
 
 .section-plans i {
   padding-right: 5px;
+}
+
+.services-list {
+  padding: 15px;
+  border: 1px solid $light-grey-1;
+  margin: 8px;
+  border-radius: 4px;
+  transition: all .4s;
+
+  &:hover {
+    transform: scale(1.4) translateZ(0);
+    color: $primary-color;
+    border: none;
+  }
 }
