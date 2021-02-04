@@ -1,6 +1,9 @@
 <%= render 'shared/navbar' %>
 <main>
-  <div class="card">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="card">
       <div class="card__title">
         <div class="icon">
           <%= link_to 'Back', tasks_path %> <i class="fa fa-arrow-left"></i>
@@ -12,7 +15,7 @@
           <div class="featured_text">
             <h1><%= @task.title.upcase %></h1>
             <p class="sub">Posted <%= time_ago_in_words(@task.created_at) %> ago</p>
-            <p class="price"></p>
+            <p class="price"><%= @task.user.email %></p>
           </div>
           <div class="image">
             <% if @task.photo.attached? %>
@@ -54,4 +57,7 @@
             </div>
       </div>
     </div>
+      </div>
+    </div>
+  </div>
   </main>
