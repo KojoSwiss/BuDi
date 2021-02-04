@@ -23,13 +23,19 @@
 
 <div class="row mt-4 justify-content-space-between">
   <div class="col-md-7 col-lg-7 ">
-    <% num = 0 %>
-    <% @tasks.each do |task| %>
-      <% num += 1 %>
-      <p class="tasks-card"><%= num %> . <%= link_to task.title.capitalize, task_path(task)  %> (<%= task.location %> ) <br> <%= time_ago_in_words(task.created_at) %> ago</em> | <%= link_to task.get_upvotes.size, like_task_path(task), method: :put, remote: :true %> Likes</p>
+      <% num = 0 %>
+      <% @tasks.each do |task| %>
+    <div class="index-content-card">
+        <% num += 1 %>
+          <img src='https://images.unsplash.com/photo-1610131913699-10f3dad5494b?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjF8fGxlZ28lMjByb2JvdHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' class="avatar" />
+          <div>
+            <p><small><%= time_ago_in_words(task.created_at) %> ago | <%= link_to task.get_upvotes.size, like_task_path(task), method: :put, remote: :true %> Likes</small></p>
+            <p><%= num %> . <%= link_to task.title.capitalize, task_path(task)%> - <small><%= task.location %></small></p>
+          </div>
+    </div>
+      <% end %>
+</div>
 
-    <% end %>
-  </div>
 
   <div class="col-md-5 ">
     <div class="ontop">

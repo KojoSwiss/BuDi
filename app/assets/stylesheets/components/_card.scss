@@ -96,6 +96,21 @@
   grid-gap: 16px;
 }
 
+.index-content-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  border: 1px solid rgb(235,235,235);
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
+}
+
+.index-content-card img {
+  margin-right: 14px;
+  height: 45px;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .services-card {
