@@ -1,5 +1,5 @@
 .btn-small {
-  background: #167FFB;
+  background: #e67e22;
   color: white;
   font-style: 26px;
   border-radius: 5px;
@@ -28,20 +28,22 @@
 .btn-search {
 
   border: 1px solid white;
-  color: #167FFB;
-  background: white;
+  color: white;
+  background: $primary-color;
   font-style: 26px;
   border-radius: 5px;
-  padding: 4px 8px;
+  padding: 8px 8px;
   width: 100%;
   text-align: center;
   position: sticky;
   top: 100px;
+  transition: all 0.3s;
    &:hover {
-        color:white;
-        background: #167FFB;
-        opacity: 0.2;
+        color: $primary-color;
+        background: transparent;
+        opacity: 0.8;
         text-decoration: none;
+        border:1px solid $primary-color;
     }
 }
 
@@ -51,12 +53,12 @@
   font-weight: 300px;
   text-decoration: none;
   border-radius: 200px;
-  color: white;
   transition: background-color 0.2s, border 0.2s, color 0.2s;
+  color: white;
 }
 
 .btn-full {
-  background-color: #e67e22;
+  background-color: $primary-color;
   border: 1px solid #e67e22;
    &:hover {
         color:#924d10;
@@ -73,4 +75,8 @@
       color: #fff;
       background: #e67e22;
     }
+}
+
+.btn-ghost ul li {
+  list-style: none;
 }

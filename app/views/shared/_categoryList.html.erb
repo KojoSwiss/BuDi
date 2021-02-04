@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top navbar-light bg-light">
+<nav class="category-sort navbar sticky-top navbar-light bg-light">
   <%= link_to 'All Services', tasks_path %> |
     <% Category.all.each do |category| %>
       <%= link_to category.name, tasks_path(category: category.name) %> |
