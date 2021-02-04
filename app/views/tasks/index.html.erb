@@ -27,10 +27,15 @@
       <% @tasks.each do |task| %>
     <div class="index-content-card">
         <% num += 1 %>
-          <img src='https://images.unsplash.com/photo-1610131913699-10f3dad5494b?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjF8fGxlZ28lMjByb2JvdHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' class="avatar" />
+        <% if task.photo.attached? %>
+            <%= cl_image_tag task.photo.key, class: "avatar" %>
+          <% else %>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered", alt: "avatar-bordered" %>
+          <% end %>
           <div>
             <p><small><%= time_ago_in_words(task.created_at) %> ago | <%= link_to task.get_upvotes.size, like_task_path(task), method: :put, remote: :true %> Likes</small></p>
             <p><%= num %> . <%= link_to task.title.capitalize, task_path(task)%> - <small><%= task.location %></small></p>
+            <p>By: <%= task.user.first_name %></p>
           </div>
     </div>
       <% end %>
