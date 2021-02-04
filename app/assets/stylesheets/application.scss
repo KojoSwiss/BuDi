@@ -35,6 +35,10 @@
   .category-dropdown {
     visibility: hidden;
   }
+
+  .service_description {
+    visibility: hidden;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -42,6 +46,10 @@
 
   .hero-text-card {
     text-align: center;
+  }
+
+  .service_description {
+    visibility: hidden;
   }
 
 
@@ -71,6 +79,14 @@
     text-align: center;
     visibility: visible;
   }
+
+  .description p {
+    visibility: hidden;
+  }
+
+  .service_description {
+    visibility: visible;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -88,6 +104,15 @@
   .footer-copyright span {
   visibility: hidden;
   }
+
+  .service_description {
+    visibility: visible;
+  }
+
+  .description p {
+    visibility: hidden;
+  }
+
 }
 
 
