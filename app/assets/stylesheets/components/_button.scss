@@ -37,11 +37,13 @@
   text-align: center;
   position: sticky;
   top: 100px;
+  transition: all 0.3s;
    &:hover {
-        color:white;
-        background: #167FFB;
-        opacity: 0.2;
+        color: $primary-color;
+        background: transparent;
+        opacity: 0.8;
         text-decoration: none;
+        border:1px solid $primary-color;
     }
 }
 
