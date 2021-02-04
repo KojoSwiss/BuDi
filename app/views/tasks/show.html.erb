@@ -9,6 +9,11 @@
     <p class="card-text"><%= @task.description %></p>
     <p class="card-text">Business name : <%= @task.company %></p>
     <hr class="my-4">
+    <% if @task.photo.attached? %>
+      <%= cl_image_tag @task.photo.key, class: "" %>
+      <% else %>
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "", alt: "avatar-bordered" %>
+    <% end %>
     <button class="positive ui button mb-3">Contact us on ...</button>
 
     <% if @task.url.blank? && @task.Ig_url.blank? && @task.Tw_url.blank?  %>
