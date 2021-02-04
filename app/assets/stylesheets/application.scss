@@ -44,6 +44,10 @@
     grid-gap: 16px;
     text-align: center;
   }
+
+  .footer-copyright span {
+  visibility: hidden;
+}
 }
 
 @media only screen and (max-width: 480px) {
@@ -58,12 +62,19 @@
     grid-gap: 16px;
   }
 
+  .footer-copyright span {
+  visibility: hidden;
+}
+
 
 }
 
 
 
 @media only screen and (max-width: 480px) {
+  .footer-copyright span {
+  visibility: hidden;
+}
 
 }
 
