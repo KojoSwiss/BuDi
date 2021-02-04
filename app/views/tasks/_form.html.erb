@@ -7,5 +7,6 @@
   <%= f.input :url,  label: "Facebook Handle", placeholder: "kofi.menu" %>
   <%= f.input :Ig_url, required: false, label: "Instagram Handle", placeholder: "kofi.menu" %>
   <%= f.input :Tw_url, required: false, label: "Twitter Handle", placeholder: "kofi.menu" %>
+  <%= f.input :photo, as: :file %>
   <%= f.button :submit, class:"btn btn-full" %>
 <% end %>
