@@ -2,7 +2,7 @@
   <%= f.input :title, label: "Service", placeholder: "Electrician" %>
   <p><%= f.collection_select :category_id, Category.all, :id, :name, { prompt: "Choose a Category"} %></p>
   <%= f.input :description, placeholder: "Let us about your services and what makes you the best .... you MAY add you contact info if you like" %>
-  <%= f.input :company,required: false, label: "Your Company (optional)" %>
+  <%= f.input :company,required: false, label: "Your Company name (optional)" %>
   <%= f.input :location, label: "Where are you located?", placeholder: "Tema" %>
   <%= f.input :url,  label: "Facebook Handle", placeholder: "kofi.menu" %>
   <%= f.input :Ig_url, required: false, label: "Instagram Handle", placeholder: "kofi.menu" %>
