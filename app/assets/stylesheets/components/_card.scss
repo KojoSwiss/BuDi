@@ -33,16 +33,6 @@
   color: white;
 }
 
-.btn-search {
-  background: #008080;
-  border-radius: 4px;
-  padding: 8px;
-  color: white;
-  &:hover {
-        color:red;
-        text-decoration: none;
-    }
-}
 
 .hero-text-card {
   position: absolute;
@@ -60,12 +50,13 @@
   border: 1px solid #f4f4f4;
   border-radius: 4px;
   box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
-  color: #1C8180;
+  color: $primary-color;
   padding: 10px;
+  list-style: none;
 }
 
 .tasks-card li a {
-  color: #1C8180;
+  color: $primary-color;
 }
 
 .city-grid {

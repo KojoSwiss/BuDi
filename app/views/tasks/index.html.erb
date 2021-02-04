@@ -1,5 +1,8 @@
 <%= render 'shared/navbar' %>
 <%= render 'shared/categoryList' %>
+<div class="category-dropdown">
+  <%= render 'shared/category' %>
+</div>
 <div class="container">
   <div class="row justify-content-center mt-4">
   <div class="col-md-12">
@@ -11,14 +14,14 @@
           class: "form-control",
           placeholder: "Search by service or location"
         %>
-      <%= submit_tag "Search", class: "mb-2 mt-2 btn-search"%>
+      <%= submit_tag "Search", class:"mb-2 mt-2 btn-search"%>
       <% end %>
     </div>
   </div>
 </div>
 
 <div class="row mt-4 mb-4 d-md-none col-lg-5 col-xs-2 btn-center sticky-top">
-  <%= link_to 'Add a Service', new_task_path, class:"btn-small"  %>
+  <%= link_to 'Add a Service', new_task_path, class:"btn-ghost"  %>
 </div>
 
 <div class="row mt-4 justify-content-space-between">
@@ -39,7 +42,7 @@
         <div class="lead"> - Search for over 100+ reliable services to find what you want </div>
         <div class="lead"> - Do you provide a reliable service? Add you skills here for free</div>
         <hr class="my-4">
-        <div><%= link_to 'New Service', new_task_path, class:"btn btn-primary btn-lg "  %></div>
+        <div><%= link_to 'New Service', new_task_path, class:"btn btn-full btn-lg "  %></div>
       </div>
     </div>
   </div>
