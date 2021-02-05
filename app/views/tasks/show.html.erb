@@ -1,22 +1,21 @@
 <%= render 'shared/navbar' %>
 <main>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
+  <div class="row">
+    <div class="col-md-12">
         <div class="card">
-      <div class="card__title">
-        <div class="icon">
-          <%= link_to 'Back', tasks_path %> <i class="fa fa-arrow-left"></i>
-        </div>
-        <h3><%= @task.company %></h3>
-      </div>
-      <div class="card__body">
-        <div class="half">
-          <div class="featured_text">
-            <h1><%= @task.title.upcase %></h1>
-            <p class="sub">Posted <%= time_ago_in_words(@task.created_at) %> ago</p>
-            <p class="price"><%= @task.user.email %></p>
+          <div class="card__title">
+          <div class="icon">
+            <%= link_to 'Back', tasks_path %> <i class="fa fa-arrow-left"></i>
+            </div>
+            <h3><%= @task.company %></h3>
           </div>
+        <div class="card__body">
+          <div class="half">
+            <div class="featured_text">
+              <h1><%= @task.title.upcase %></h1>
+              <p class="sub">Posted <%= time_ago_in_words(@task.created_at) %> ago</p>
+              <p class="price"><%= @task.user.email %></p>
+            </div>
           <div class="service_description">
             <p><%= @task.description %></p>
           </div>
@@ -27,14 +26,14 @@
               <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", alt: "avatar-bordered" %>
           <% end %>
           </div>
-        </div>
-        <div class="half">
-          <div class="description">
-            <p><%= @task.description %></p>
+          </div>
+          <div class="half">
+            <div class="description">
+              <p><%= @task.description %></p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="card__footer">
+        <div class="card__footer">
         <div class="recommend">
           <p>POsted by</p>
           <h3><%= @task.user.user_name %></h3>
@@ -49,18 +48,17 @@
             <% end %>
           </div>
         <div class=" ui labeled button mt-4" tabindex="0">
-              <div class="ui button">
-                <%= link_to like_task_path(@task), method: :put, remote: :true do %>
-                  <i class="heart icon"></i> Like
-              </div>
-              <a class="ui basic label">
-                <%= @task.get_upvotes.size %>
-              </a>
-                <% end %>
-            </div>
-      </div>
-    </div>
+          <div class="ui button">
+            <%= link_to like_task_path(@task), method: :put, remote: :true do %>
+              <i class="heart icon"></i> Like
+          </div>
+          <a class="ui basic label">
+            <%= @task.get_upvotes.size %>
+          </a>
+            <% end %>
+        </div>
+        </div>
       </div>
     </div>
   </div>
-  </main>
+</main>
