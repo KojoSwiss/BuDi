@@ -25,6 +25,22 @@
   height: auto;
 }
 
+.side-bar li {
+  margin: 8px 4px;
+  box-shadow: 0 0 1px grey;
+  padding: 8px;
+  border-radius: 8px;
+  list-style: none;
+  text-decoration: none;
+  color: $primary-color;
+  background: white;
+  transition: all 0.2s;
+    &:hover {
+      background: $primary-color;
+      color: white;
+    }
+}
+
 @media only screen and (max-width: 1500px) {
 
 
