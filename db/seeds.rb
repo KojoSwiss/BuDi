@@ -1,5 +1,16 @@
 require "open-uri"
 
+Category.destroy_all
+
+puts 'Creating category'
+
+Category.create(name: "Food/Catering")
+Category.create(name: "Handyman")
+Category.create(name: "Makeup/Beauty")
+Category.create(name: "Photo/Video")
+Category.create(name: "Delivery")
+Category.create(name: "Others")
+
 puts 'Creating users'
 
 10.times do
@@ -21,8 +32,8 @@ puts 'Creating Tasks'
     title: Faker::Company.profession,
     description: Faker::Lorem.paragraphs,
     company: Faker::Movies::LordOfTheRings.character,
-    category_id: rand(19..24),
-    user_id: rand(1..20),
+    category_id: rand(1..6),
+    user_id: rand(1..10),
     location: Faker::Address.city
     )
 
