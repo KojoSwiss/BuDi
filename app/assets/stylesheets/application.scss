@@ -39,6 +39,10 @@
   .service_description {
     visibility: hidden;
   }
+
+  .description-small p {
+    visibility: hidden;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -49,6 +53,10 @@
   }
 
   .service_description {
+    visibility: hidden;
+  }
+
+  .description-small p {
     visibility: hidden;
   }
 
@@ -84,6 +92,10 @@
     visibility: hidden;
   }
 
+  .description-small p {
+    visibility: visible;
+  }
+
   .service_description {
     visibility: visible;
   }
@@ -111,6 +123,10 @@
 
   .description p {
     visibility: hidden;
+  }
+
+  .description-small p {
+    visibility: visible;
   }
 
 }

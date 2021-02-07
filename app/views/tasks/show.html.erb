@@ -1,2 +1,76 @@
 <%= render 'shared/navbar' %>
-<h1>Show Page</h1>
+<main>
+  <div class="card">
+      <div class="card__title">
+        <div class="icon">
+          <i class="fa fa-arrow-left"></i><%= link_to "Back", tasks_path, class:"btn btn-full" %>
+        </div>
+        <h3><%= @task.company %></h3>
+      </div>
+      <div class="card__body">
+        <div class="half">
+          <div class="featured_text">
+            <h1><%= @task.title %></h1>
+            <p class="sub"><em>Submitted by :</em>
+              <% if @task.user.user_name.blank? %>
+                <%= @task.user.email %>
+              <% else %>
+                <%= @task.user.user_name %></p>
+              <% end %>
+            <p class="price"><%= time_ago_in_words(@task.created_at) %> ago</p>
+          </div>
+          <div class="image">
+            <% if @task.photo.attached? %>
+              <%= cl_image_tag @task.photo.key %>
+            <% else %>
+              <div class="image-text-card"><h4>No Image Available</h4></div>
+            <% end %>
+          </div>
+          <div class="description-small">
+            <p><%= @task.description %></p>
+          </div>
+        </div>
+        <div class="half">
+          <div class="description">
+            <p><%= @task.description %></p>
+          </div>
+          <span class="stock"><i class="fa fa-pen"></i> In stock</span>
+          <div class="reviews">
+            <div class=" ui labeled button mt-4" tabindex="0">
+          <div class="ui button">
+            <%= link_to like_task_path(@task), method: :put, remote: :true do %>
+              <i class="heart icon"></i> Like
+          </div>
+          <a class="ui basic label">
+            <%= @task.get_upvotes.size %>
+          </a>
+            <% end %>
+        </div>
+            <span>(64 reviews)</span>
+          </div>
+        </div>
+      </div>
+      <div class="card__footer">
+        <div class="recommend">
+          <p>Submitted by</p>
+          <h3>
+            <% if @task.user.user_name.blank? %>
+                <%= @task.user.email %>
+              <% else %>
+                <%= @task.user.user_name %></p>
+              <% end %></h3>
+        </div>
+        <div class="action">
+          <% if @task.user_id == current_user.id %>
+              <%= link_to "Edit", edit_task_path(@task), class:"ui primary basic button" %>
+              <%= link_to "Back", tasks_path, class:"ui positive basic button" %>
+              <%= link_to "Delete", task_path(@task), method: :delete, data: { confirm: "Are you sure?" }, class:"ui red button" %>
+            <% else %>
+              <%= link_to "Back", tasks_path, class:"ui positive basic button" %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+</main>
+
+
