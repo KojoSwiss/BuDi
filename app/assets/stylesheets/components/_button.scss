@@ -121,6 +121,15 @@
     }
 }
 
+.btn-signup {
+  border: 2px solid #e67e22;
+  color: $primary-color;
+    &:hover {
+      border: 1px solid transparent;
+      color: #fff;
+      background: #e67e22;
+    }
+}
 .btn-ghost ul li {
   list-style: none;
 }
