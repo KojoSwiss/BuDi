@@ -302,7 +302,9 @@ cite img {
     border-radius: 5px;
     width: 90%;
     margin-left: 5%;
-    box-shadow: 0 2px 2px #efefef;
+      &:hover {
+        box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
+      }
 }
 
 .plan-box div {
