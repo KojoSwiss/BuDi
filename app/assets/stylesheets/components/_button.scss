@@ -133,3 +133,13 @@
 .btn-ghost ul li {
   list-style: none;
 }
+
+.btn-email {
+  border: 1px solid #ddd;
+  color: grey;
+    &:hover {
+      border: 1px solid transparent;
+      color: #fff;
+      background: #e67e22;
+    }
+}

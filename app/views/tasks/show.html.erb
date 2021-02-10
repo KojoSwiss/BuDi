@@ -1,91 +1,103 @@
 <%= render 'shared/navbar' %>
-  <div class="row">
-    <div class="col-md-12">
-        <div class="card">
-          <div class="card__title">
-          <div class="icon">
-            <%= link_to 'Back', tasks_path %> <i class="fa fa-arrow-left"></i>
-            </div>
-            <h3><%= @task.company %></h3>
-          </div>
-        <div class="card__body">
-          <div class="half">
-            <div class="featured_text">
-              <h1><%= @task.title.upcase %></h1>
-              <p class="sub">Posted <%= time_ago_in_words(@task.created_at) %> ago</p>
-              <p class="price"><%= @task.user.email %></p>
-              <div>
-                <% if @task.url.blank? && @task.Ig_url.blank? && @task.Tw_url.blank?  %>
-                    <p><strong>Please edit your posting and add a social media handle</strong></p>
-                  <% elsif @task.url.blank? && @task.Ig_url.blank? %>
-                    <a href='http://www.twitter.com/<%= @task.Tw_url %>' target="_blank" class="ui circular twitter icon button">
-                      <i class="twitter icon"></i>
-                    </a>
-                  <% elsif @task.url.blank? && @task.Tw_url.blank? %>
-                    <a href='http://www.instagram.com/<%= @task.Ig_url %>' target="_blank" class="ui circular instagram icon button">
-                      <i class="instagram icon"></i>
-                    </a>
-                  <% elsif @task.Ig_url.blank? && @task.Tw_url.blank? %>
-                    <a href='http://www.facebook.com/<%= @task.url %>' target="_blank" class="ui circular facebook icon button">
-                        <i class="facebook icon"></i>
-                      </a>
-                  <% elsif @task.url.blank? %>
-                    <a href='http://www.twitter.com/<%= @task.Tw_url %>' target="_blank" class="ui circular twitter icon button">
-                      <i class="twitter icon"></i>
-                    </a>
-                    <a href='http://www.instagram.com/<%= @task.Ig_url %>' target="_blank" class="ui circular instagram icon button">
-                      <i class="instagram icon"></i>
-                    </a>
-                    <% elsif @task.Tw_url.blank? %>
-                      <a href='http://www.facebook.com/<%= @task.url %>' target="_blank" class="ui circular facebook icon button">
-                        <i class="facebook icon"></i>
-                      </a>
-                    <a href='http://www.instagram.com/<%= @task.Ig_url %>' target="_blank" class="ui circular instagram icon button">
-                      <i class="instagram icon"></i>
-                    </a>
-                    <% elsif @task.Ig_url.blank? %>
-                      <a href='http://www.facebook.com/<%= @task.url %>' target="_blank" class="ui circular facebook icon button">
-                        <i class="facebook icon"></i>
-                      </a>
-                      <a href='http://www.twitter.com/<%= @task.Tw_url %>' target="_blank" class="ui circular twitter icon button">
-                        <i class="twitter icon"></i>
-                      </a>
-                    <% else %>
-                      <a href='http://www.facebook.com/<%= @task.url %>' target="_blank" class="ui circular facebook icon button">
-                        <i class="facebook icon"></i>
-                      </a>
-                      <a href='http://www.twitter.com/<%= @task.Tw_url %>' target="_blank" class="ui circular twitter icon button">
-                        <i class="twitter icon"></i>
-                      </a>
-                      <a href='http://www.instagram.com/<%= @task.Ig_url %>' target="_blank" class="ui circular instagram icon button">
-                      <i class="instagram icon"></i>
-                    </a>
-                  <% end %>
-              </div>
-            </div>
-          <div class="service_description">
-            <p><%= @task.description %></p>
-          </div>
-          <div class="image">
-            <% if @task.photo.attached? %>
-              <%= cl_image_tag @task.photo.key %>
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="user">
+          <div class="user-avatar justify-content-center">
+            <% if current_user.photo.attached? %>
+              <%= cl_image_tag current_user.photo.key%>
             <% else %>
-              <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", alt: "avatar-bordered" %>
-          <% end %>
+              <%= image_tag "robot3.png" %>
+            <% end %>
           </div>
+          <div class="user-mail">
+              <p>
+                <% if @task.user.user_name.blank? %>
+                <p>Email: <%= @task.user.email %></p>
+              <% else %>
+                <p>Posted by <%= @task.user.email %> </p>
+              <% end %>
+              </p>
+              <a class="btn btn-email" href="mailto: <%=@task.user.email%>?subject=Enquiry - Content Manager"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a> </p>
           </div>
-          <div class="half">
-            <div class="description">
-              <p><%= @task.description %></p>
+          <div class="user-contact">
+            <% if @task.url.blank? && @task.Ig_url.blank? && @task.Tw_url.blank?  %>
+              <p><em>Please edit your posting and add a social media handle</em></p>
+            <% elsif @task.url.blank? && @task.Ig_url.blank? %>
+              <a href='http://www.twitter.com/<%= @task.Tw_url %>' target="_blank" class="ui circular twitter icon button">
+                <i class="twitter icon"></i>
+              </a>
+            <% elsif @task.url.blank? && @task.Tw_url.blank? %>
+              <a href='http://www.instagram.com/<%= @task.Ig_url %>' target="_blank" class="ui circular instagram icon button">
+                <i class="instagram icon"></i>
+              </a>
+            <% elsif @task.Ig_url.blank? && @task.Tw_url.blank? %>
+              <a href='http://www.facebook.com/<%= @task.url %>' target="_blank" class="ui circular facebook icon button">
+                  <i class="facebook icon"></i>
+                </a>
+            <% elsif @task.url.blank? %>
+              <a href='http://www.twitter.com/<%= @task.Tw_url %>' target="_blank" class="ui circular twitter icon button">
+                <i class="twitter icon"></i>
+              </a>
+              <a href='http://www.instagram.com/<%= @task.Ig_url %>' target="_blank" class="ui circular instagram icon button">
+                <i class="instagram icon"></i>
+              </a>
+              <% elsif @task.Tw_url.blank? %>
+                <a href='http://www.facebook.com/<%= @task.url %>' target="_blank" class="ui circular facebook icon button">
+                  <i class="facebook icon"></i>
+                </a>
+              <a href='http://www.instagram.com/<%= @task.Ig_url %>' target="_blank" class="ui circular instagram icon button">
+                <i class="instagram icon"></i>
+              </a>
+              <% elsif @task.Ig_url.blank? %>
+                <a href='http://www.facebook.com/<%= @task.url %>' target="_blank" class="ui circular facebook icon button">
+                  <i class="facebook icon"></i>
+                </a>
+                <a href='http://www.twitter.com/<%= @task.Tw_url %>' target="_blank" class="ui circular twitter icon button">
+                  <i class="twitter icon"></i>
+                </a>
+              <% else %>
+                <a href='http://www.facebook.com/<%= @task.url %>' target="_blank" class="ui circular facebook icon button">
+                  <i class="facebook icon"></i>
+                </a>
+                <a href='http://www.twitter.com/<%= @task.Tw_url %>' target="_blank" class="ui circular twitter icon button">
+                  <i class="twitter icon"></i>
+                </a>
+                <a href='http://www.instagram.com/<%= @task.Ig_url %>' target="_blank" class="ui circular instagram icon button">
+                <i class="instagram icon"></i>
+              </a>
+            <% end %>
+        </div>
+        <div class=" ui labeled button mt-4 mb-4" tabindex="0">
+            <div class="ui button">
+              <%= link_to like_task_path(@task), method: :put, remote: :true do %>
+              <i class="heart icon"></i> Like
             </div>
+            <a class="ui basic label">
+              <%= @task.get_upvotes.size %>
+            </a>
+              <% end %>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-6">
+        <div class="details">
+          <h2> <%= @task.title %> </h2>
+          <p>Posted <%= time_ago_in_words(@task.created_at) %> ago</p>
+          <div class="serv-image">
+            <% if @task.photo.attached? %>
+                <%= cl_image_tag @task.photo.key %>
+              <% else %>
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", alt: "avatar-bordered" %>
+            <% end %>
           </div>
-        </div>
-        <div class="card__footer">
-        <div class="recommend">
-          <p>POsted by</p>
-          <h3><%= @task.user.user_name %></h3>
-        </div>
-        <div class="mt-4">
+          <h2>Description</h2>
+          <div class="serv-content">
+            <p> <%= @task.description %> </p>
+          </div>
+          <hr>
+          <div class="serv-footer">
             <% if @task.user_id == current_user.id %>
               <%= link_to "Edit", edit_task_path(@task), class:"ui primary basic button" %>
               <%= link_to "Back", tasks_path, class:"ui positive basic button" %>
@@ -94,17 +106,10 @@
               <%= link_to "Back", tasks_path, class:"ui positive basic button" %>
             <% end %>
           </div>
-        <div class=" ui labeled button mt-4" tabindex="0">
-          <div class="ui button">
-            <%= link_to like_task_path(@task), method: :put, remote: :true do %>
-              <i class="heart icon"></i> Like
           </div>
-          <a class="ui basic label">
-            <%= @task.get_upvotes.size %>
-          </a>
-            <% end %>
-        </div>
         </div>
       </div>
     </div>
   </div>
+</main>
+
