@@ -36,7 +36,7 @@
     <div class="index-content-card">
         <% num += 1 %>
         <% if task.photo.attached? %>
-            <%= cl_image_tag task.photo.key, class: "avatar" %>
+            <%= cl_image_tag task.user.photo.key, class: "avatar" %>
           <% else %>
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered", alt: "avatar-bordered" %>
           <% end %>
