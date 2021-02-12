@@ -21,7 +21,7 @@
 </div>
 
 <div class="row mt-4 justify-content-end">
-  <div class="col-md-3 col-lg-3">
+  <div class="col-md-2 col-lg-2">
     <ul class="side-bar">
       <% Category.all.each do |category| %>
         <li>
@@ -30,7 +30,7 @@
       <% end %>
     </ul>
   </div>
-  <div class="col-md-4 col-lg-4 ">
+  <div class="col-md-6 col-lg-6 ">
       <% num = 0 %>
       <% @tasks.each do |task| %>
     <div class="index-content-card">
@@ -41,8 +41,8 @@
             <%= cl_image_tag task.photo.key %>
           <% end %>
           <div>
-            <p><small><%= time_ago_in_words(task.created_at) %> ago | <%= link_to task.get_upvotes.size, like_task_path(task), method: :put, remote: :true %> Likes | By: <%= task.user.first_name %></small></p>
             <p><%= num %> . <%= link_to task.title.capitalize, task_path(task)%> - <small><%= task.location %></small></p>
+            <p><small><%= time_ago_in_words(task.created_at) %> ago | <%= link_to task.get_upvotes.size, like_task_path(task), method: :put, remote: :true %> Likes | By: <%= task.user.user_name %></small></p>
 
           </div>
     </div>
@@ -50,7 +50,7 @@
 </div>
 
 
-  <div class="col-md-5 ">
+  <div class="col-md-4 ">
     <div class="ontop">
       <div class="jumbotron">
         <%= image_tag 'esinam.jpg' %>

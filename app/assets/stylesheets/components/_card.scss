@@ -110,7 +110,7 @@
   align-items: center;
   margin-bottom: 8px;
   background: white;
-  padding: 8px 16px;
+  padding-left: 8px;
   border: 1px solid rgb(235,235,235);
     &:hover {
       box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
@@ -125,7 +125,6 @@
 .index-content-card img {
   margin-right: 40px;
   height: 40px;
-  border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
 }
