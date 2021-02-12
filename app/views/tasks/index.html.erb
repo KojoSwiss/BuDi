@@ -38,7 +38,7 @@
         <% if task.photo.nil? %>
             <%= image_tag 'boy.png' %>
           <% else %>
-            <%= cl_image_tag task.photo.key %>
+            <%= cl_image_tag task.user.photo.key %>
           <% end %>
           <div>
             <p><%= num %> . <%= link_to task.title.capitalize, task_path(task)%> - <small><%= task.location %></small></p>

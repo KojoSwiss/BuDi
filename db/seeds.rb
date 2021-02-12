@@ -19,8 +19,12 @@ puts 'Creating users'
     password: "123456",
     user_name: Faker::Movies::LordOfTheRings.character,
     )
-    puts "#{user.email} created"
-    user.save!
+
+  file = URI.open(Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "jpg"))
+  user.photo.attach(io: file, filename: 'user.jpg', content_type: 'image/jpg')
+
+  puts "#{user.email} created"
+  user.save!
 end
 
 puts 'Users created'
