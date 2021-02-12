@@ -17,6 +17,7 @@ puts 'Creating users'
   user = User.new(
     email: Faker::Internet.email,
     password: "123456",
+    user_name: Faker::Movies::LordOfTheRings.character,
     )
     puts "#{user.email} created"
     user.save!
@@ -36,9 +37,14 @@ puts 'Creating Tasks'
     user_id: rand(1..10),
     location: Faker::Address.city
     )
+  file = URI.open(Faker::Company.logo)
+  task.photo.attach(io: file, filename: 'service.jpg', content_type: 'image/jpg')
 
   puts "#{task.title} done"
   task.save!
 end
 puts 'Done'
+
+
+
 

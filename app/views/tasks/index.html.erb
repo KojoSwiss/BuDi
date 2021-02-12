@@ -35,10 +35,10 @@
       <% @tasks.each do |task| %>
     <div class="index-content-card">
         <% num += 1 %>
-        <% if task.photo.attached? %>
-            <%= cl_image_tag task.user.photo.key, class: "avatar" %>
-          <% else %>
+        <% if task.photo.nil? %>
             <%= image_tag 'boy.png' %>
+          <% else %>
+            <%= cl_image_tag task.photo.key %>
           <% end %>
           <div>
             <p><small><%= time_ago_in_words(task.created_at) %> ago | <%= link_to task.get_upvotes.size, like_task_path(task), method: :put, remote: :true %> Likes | By: <%= task.user.first_name %></small></p>
