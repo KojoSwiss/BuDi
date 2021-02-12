@@ -38,7 +38,7 @@
         <% if task.photo.attached? %>
             <%= cl_image_tag task.user.photo.key, class: "avatar" %>
           <% else %>
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered", alt: "avatar-bordered" %>
+            <%= image_tag 'boy.png' %>
           <% end %>
           <div>
             <p><small><%= time_ago_in_words(task.created_at) %> ago | <%= link_to task.get_upvotes.size, like_task_path(task), method: :put, remote: :true %> Likes | By: <%= task.user.first_name %></small></p>
