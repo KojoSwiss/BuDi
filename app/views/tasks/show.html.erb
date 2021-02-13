@@ -16,7 +16,7 @@
                 <% if @task.user.user_name.blank? %>
                 <p>Email: <%= @task.user.email %></p>
               <% else %>
-                <p>Posted by <%= @task.user.email %> </p>
+                <p>Posted by <%= @task.user.user_name %> </p>
               <% end %>
               </p>
               <a class="btn btn-email" href="mailto: <%=@task.user.email%>?subject=Enquiry - Content Manager"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a> </p>
