@@ -39,7 +39,8 @@ puts 'Creating Tasks'
     company: Faker::Movies::LordOfTheRings.character,
     category_id: rand(1..6),
     user_id: rand(1..10),
-    location: Faker::Address.city
+    location: Faker::Address.city,
+    phone_number: Faker::PhoneNumber.phone_number
     )
   file = URI.open(Faker::Company.logo)
   task.photo.attach(io: file, filename: 'service.jpg', content_type: 'image/jpg')

@@ -5,11 +5,13 @@
       <div class="col-md-4">
         <div class="user">
           <div class="user-avatar justify-content-center">
+            <p>Posted by:</p>
             <% if @task.user.photo.blank? %>
               <%= image_tag "robot3.png" %>
             <% else %>
               <%= cl_image_tag @task.user.photo.key%>
             <% end %>
+            <p>Tel: <%= @task.phone_number %></p>
           </div>
           <div class="user-mail">
               <p>
@@ -106,6 +108,8 @@
               <% else %>
                 <%= link_to "Back", tasks_path, class:"ui positive basic button" %>
               <% end %>
+            <% else %>
+              <%= link_to "Back", tasks_path, class:"ui positive basic button" %>
             <% end %>
           </div>
           </div>
