@@ -98,12 +98,14 @@
           </div>
           <hr>
           <div class="serv-footer">
-            <% if @task.user_id == current_user.id %>
-              <%= link_to "Edit", edit_task_path(@task), class:"ui primary basic button" %>
-              <%= link_to "Back", tasks_path, class:"ui positive basic button" %>
-              <%= link_to "Delete", task_path(@task), method: :delete, data: { confirm: "Are you sure?" }, class:"ui red button" %>
-            <% else %>
-              <%= link_to "Back", tasks_path, class:"ui positive basic button" %>
+            <% if user_signed_in? %>
+              <% if @task.user_id == current_user.id %>
+                <%= link_to "Edit", edit_task_path(@task), class:"ui primary basic button" %>
+                <%= link_to "Back", tasks_path, class:"ui positive basic button" %>
+                <%= link_to "Delete", task_path(@task), method: :delete, data: { confirm: "Are you sure?" }, class:"ui red button" %>
+              <% else %>
+                <%= link_to "Back", tasks_path, class:"ui positive basic button" %>
+              <% end %>
             <% end %>
           </div>
           </div>
