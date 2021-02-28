@@ -34,7 +34,6 @@
   margin: 8px 4px;
   padding: 8px;
   border: 1px solid #ebebeb;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
   list-style: none;
   text-decoration: none;
   color: $primary-color;
@@ -42,6 +41,7 @@
   transition: all 0.2s;
     &:hover {
       background: #fee9e4;
+      box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
       color: white;
     }
 }

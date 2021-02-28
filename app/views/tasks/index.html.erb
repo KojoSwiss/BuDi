@@ -23,6 +23,9 @@
 <div class="row mt-4 justify-content-end">
   <div class="col-md-2 col-lg-2">
     <ul class="side-bar">
+      <li>
+        <%= link_to "All Services", tasks_path %>
+      </li>
       <% Category.all.each do |category| %>
         <li>
           <%= link_to category.name, tasks_path(category: category.name) %>
