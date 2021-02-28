@@ -4,7 +4,6 @@ class Task < ApplicationRecord
   belongs_to :user
   has_one_attached :photo
 
-
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
@@ -15,4 +14,6 @@ class Task < ApplicationRecord
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     },
     order_within_rank: "cached_votes_total DESC"
+
+  validates :title, :description, :location, :phone_number, :photo, presence: true
 end
