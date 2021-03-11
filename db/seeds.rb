@@ -9,6 +9,7 @@ Category.create(name: "Handyman")
 Category.create(name: "Makeup/Beauty")
 Category.create(name: "Photo/Video")
 Category.create(name: "Delivery")
+Category.create(name: "Fashion")
 Category.create(name: "Others")
 
 puts 'Creating users'
@@ -37,7 +38,7 @@ puts 'Creating Tasks'
     title: Faker::Company.profession,
     description: Faker::Lorem.paragraphs,
     company: Faker::Movies::LordOfTheRings.character,
-    category_id: rand(1..6),
+    category_id: rand(1..7),
     user_id: rand(1..10),
     location: Faker::Address.city,
     phone_number: Faker::PhoneNumber.phone_number
