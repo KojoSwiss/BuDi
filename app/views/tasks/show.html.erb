@@ -74,6 +74,10 @@
               </a>
             <% end %>
         </div>
+       <% if !user_signed_in? %>
+          <h3>Please sign in to Like a service</h3>
+       <% end %>
+
         <div class=" ui labeled button mt-4 mb-4" tabindex="0">
             <div class="ui button">
               <%= link_to like_task_path(@task), method: :put, remote: :true do %>
@@ -83,6 +87,7 @@
               <%= @task.get_upvotes.size %>
             </a>
               <% end %>
+
         </div>
       </div>
       </div>
