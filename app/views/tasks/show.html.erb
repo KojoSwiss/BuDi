@@ -11,7 +11,10 @@
             <% else %>
               <%= cl_image_tag @task.user.photo.key%>
             <% end %>
-            <p>Tel: <%= @task.phone_number %></p>
+            <hr>
+            <div>
+              <p><i class="fab fa-whatsapp-square" id="whatsapp-btn"></i> <%= @task.phone_number %></p>
+            </div>
           </div>
           <div class="user-mail">
               <p>
