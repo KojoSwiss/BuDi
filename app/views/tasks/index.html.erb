@@ -36,19 +36,18 @@
   <div class="col-md-6 col-lg-6 ">
       <% num = 0 %>
       <% @tasks.each do |task| %>
-    <div class="index-content-card">
-        <% num += 1 %>
-        <% if task.photo.nil? %>
-            <%= image_tag 'boy.png' %>
-          <% else %>
-            <%= cl_image_tag task.photo.key %>
-          <% end %>
+        <div class="index-content-card">
           <div>
             <p><%= num %> . <%= link_to task.title.capitalize, task_path(task)%> - <small><%= task.location %></small></p>
             <p><small><%= time_ago_in_words(task.created_at) %> ago | <%= link_to task.get_upvotes.size, like_task_path(task), method: :put, remote: :true %> Likes | By: <%= task.user.user_name %></small></p>
-
           </div>
-    </div>
+        <% num += 1 %>
+        <% if task.photo.nil? %>
+            <%= image_tag 'boy.png' %>
+        <% else %>
+            <%= cl_image_tag task.photo.key %>
+        <% end %>
+        </div>
       <% end %>
 </div>
 
