@@ -22,11 +22,11 @@
 </section>
 <div class="album py-5 bg-light">
   <div class="container">
-    <div class="row">
+    <div class="row d-flex justify-content-center">
       <% num = 0 %>
           <% @tasks.each do |task| %>
             <%= link_to (task) do  %>
-              <div class="col-md-4">
+              <div class="col-md-4 ">
                 <div class="card mb-4 p-1 shadow-sm">
                   <div>
                     <% if task.photo.nil? %>
@@ -36,7 +36,7 @@
                       <%= cl_image_tag task.photo.key, style: 'width:100%;'%>
                     </div>
                     <% end %>
-                    <p><%= num += 1 %>. <%= link_to task.title.capitalize, task_path(task)%> - <small><%= task.location %></small></p>
+                    <h3><%= num += 1 %>. <%= link_to task.title.capitalize, task_path(task)%> - <small><%= task.location %></small></h3>
                     <p><small><%= time_ago_in_words(task.created_at) %> ago | <%= link_to task.get_upvotes.size, like_task_path(task), method: :put, remote: :true %> Likes | By: <%= task.user.user_name %></small></p>
                   </div>
                 </div>
