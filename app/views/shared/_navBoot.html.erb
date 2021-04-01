@@ -52,10 +52,10 @@
   </div>
   <div class="navbar navbar-dark" style="background-color: #fba892;">
     <div class="container d-flex justify-content-between">
-      <a href="#" class="navbar-brand d-flex align-items-center">
-        <i class="fas fa-search"></i>
-        <strong>Serv Gh</strong>
-      </a>
+      <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
+      <i class="fas fa-search"></i>
+      <strong>Serv Gh</strong>
+    <% end %>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
