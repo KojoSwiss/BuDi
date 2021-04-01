@@ -16,23 +16,15 @@
           <div class="col-sm-4 col-md-4 py-4">
                 <ul class="list-unstyled">
                   <li class="text-warning">
-                    <%= link_to "Services Directory", tasks_path%>
-                  </li>
-                  <span>
-                    <li class="text-warning">
-                      <%= link_to "Add New Service", new_task_path %>
-                    </li>
-                  </span>
-                  <li class="text-warning">
                     <% if user_signed_in? %>
-                      <li class="text-warning">
-                        <%= link_to "Log out", destroy_user_session_path, method: :delete%>
-                      </li>
                       <% if current_user.photo.attached? %>
                         <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                       <% else %>
                         <%= image_tag "robot3.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                       <% end %>
+                      <li class="text-warning">
+                        <%= link_to "Log out", destroy_user_session_path, method: :delete%>
+                      </li>
                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
                       </div>
@@ -45,6 +37,14 @@
                         <%= link_to "Login", new_user_session_path %>
                       </li>
                     <% end %>
+                  <li class="text-warning">
+                    <%= link_to "Services Directory", tasks_path%>
+                  </li>
+                  <span>
+                    <li class="text-warning">
+                      <%= link_to "Add New Service", new_task_path %>
+                    </li>
+                  </span>
                 </ul>
           </div>
       </div>

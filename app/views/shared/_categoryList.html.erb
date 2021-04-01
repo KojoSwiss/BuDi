@@ -1,6 +1,6 @@
-<nav class="category-sort navbar sticky-top navbar-light bg-light">
+<nav class="btn btn-transparent navbar sticky-top navbar-light bg-light">
   <%= link_to 'Directory', tasks_path %> |
     <% Category.all.each do |category| %>
-      <%= link_to category.name, tasks_path(category: category.name) %> |
+      <%= link_to category.name, tasks_path(category: category.name), class:"btn-cat" %> |
     <% end %>
 </nav>
