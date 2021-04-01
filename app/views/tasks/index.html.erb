@@ -1,73 +1,43 @@
 <%= render 'shared/navbar' %>
-<div class="container">
-  <div class="row justify-content-center mt-4">
-  <div class="col-md-12">
-    <div class="intro">
+<section class="jumbotron text-center">
+    <div class="container">
       <h2> Find all the services you need</h2>
-      <%= form_tag tasks_path, method: :get do %>
+      <p class="lead text-muted">Search for a service by name or by location</p>
+      <p>
+        <%= form_tag tasks_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
-          placeholder: "Search by service or location"
+          placeholder: ""
         %>
       <%= submit_tag "Search", class: "mb-2 mt-2 btn-search"%>
       <% end %>
+      </p>
     </div>
-  </div>
-</div>
-
-<div class="row mt-4 mb-4 d-md-none col-lg-5 col-xs-2 btn-center sticky-top">
-  <%= link_to 'Add a Service', new_task_path, class:"btn-small"  %>
-</div>
-
-<div class="row mt-4 justify-content-end">
-  <div class="col-md-2 col-lg-2">
-    <ul class="side-bar">
-      <li>
-        <%= link_to "All Services", tasks_path %>
-      </li>
-      <% Category.all.each do |category| %>
-        <li>
-          <%= link_to category.name, tasks_path(category: category.name) %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-  <%= link_to (@task) do  %>
-  <div class="col-md-6 col-lg-6 ">
+</section>
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
       <% num = 0 %>
-      <% @tasks.each do |task| %>
-        <div class="index-content-card">
-          <div>
-            <p><%= num %> . <%= link_to task.title.capitalize, task_path(task)%> - <small><%= task.location %></small></p>
-            <p><small><%= time_ago_in_words(task.created_at) %> ago | <%= link_to task.get_upvotes.size, like_task_path(task), method: :put, remote: :true %> Likes | By: <%= task.user.user_name %></small></p>
-          </div>
-        <% num += 1 %>
-        <% if task.photo.nil? %>
-            <%= image_tag 'boy.png' %>
-        <% else %>
-            <%= cl_image_tag task.photo.key %>
-        <% end %>
-        </div>
-      <% end %>
-</div>
-<% end %>
-
-
-  <div class="col-md-4 ">
-    <div class="ontop">
-      <div class="jumbotron">
-        <%= image_tag 'esinam.jpg' %>
-        <hr class="my-4">
-        <!-- <h1 class="display-4">Add | Look for a service</h1> -->
-        <div class="lead"> - Search for over 100+ reliable services to find what you want </div>
-        <div class="lead"> - Do you provide a reliable service? Add you skills here for free</div>
-        <hr class="my-4">
-        <div><%= link_to 'Add a Service', new_task_path, class:"btn btn-full btn-lg "  %></div>
-      </div>
+          <% @tasks.each do |task| %>
+            <%= link_to (task) do  %>
+              <div class="col-md-4">
+                <div class="card mb-4 p-1 shadow-sm">
+                  <div>
+                    <% if task.photo.nil? %>
+                      <%= image_tag 'boy.png', class:"bd-placeholder-img card-img-top " %>
+                    <% else %>
+                    <div class="catCard">
+                      <%= cl_image_tag task.photo.key, style: 'width:100%;'%>
+                    </div>
+                    <% end %>
+                    <p><%= num += 1 %>. <%= link_to task.title.capitalize, task_path(task)%> - <small><%= task.location %></small></p>
+                    <p><small><%= time_ago_in_words(task.created_at) %> ago | <%= link_to task.get_upvotes.size, like_task_path(task), method: :put, remote: :true %> Likes | By: <%= task.user.user_name %></small></p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
     </div>
   </div>
-</div>
-
-
 </div>
