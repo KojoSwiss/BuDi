@@ -4,8 +4,13 @@
 
       <!-- Left Column / Headphones Image -->
       <div class="left-column">
-        <p>hello world</p>
-        <%= image_tag "esinam.jpeg" %>
+        <div class="serv-image">
+            <% if @task.photo.attached? %>
+                <%= cl_image_tag @task.photo.key %>
+              <% else %>
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", alt: "avatar-bordered" %>
+            <% end %>
+          </div>
       </div>
 
 
