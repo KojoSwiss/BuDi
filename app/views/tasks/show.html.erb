@@ -3,32 +3,29 @@
 <main class="container">
   <div class="row">
     <div class="col-md-8">
-        <div class="serv-image">
-            <% if @task.photo.attached? %>
-                <%= cl_image_tag @task.photo.key %>
-              <% else %>
-                <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", alt: "avatar-bordered" %>
-            <% end %>
-          </div>
+      <div class="serv-image">
+        <% if @task.photo.attached? %>
+            <%= cl_image_tag @task.photo.key %>
+          <% else %>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", alt: "avatar-bordered" %>
+        <% end %>
+        </div>
     </div>
     <div class="col-md-4 p-3 mb-2 text-white" style="background-color: #58B19F;">
-        <!-- Product Description -->
-        <div class="product-description">
-          <span>Serv Gh</span>
-          <h1><%= @task.title %></h1>
-          <p><%= @task.description %></p>
-          <hr>
-            <p>
-                <% if @task.user.user_name.blank? %>
-                <p>Email: <%= @task.user.email %></p>
-              <% else %>
-                <p>Posted by <%= @task.user.user_name %> </p>
-              <% end %>
-              </p>
-            <%= time_ago_in_words(@task.created_at) %> ago
-        </div>
-
-        <!-- Product Configuration -->
+      <div class="product-description">
+        <span>Serv Gh</span>
+        <h1><%= @task.title %></h1>
+        <p><%= @task.description %></p>
+        <hr>
+          <p>
+              <% if @task.user.user_name.blank? %>
+              <p>Email: <%= @task.user.email %></p>
+            <% else %>
+              <p>Posted by <%= @task.user.user_name %> </p>
+            <% end %>
+            </p>
+          <%= time_ago_in_words(@task.created_at) %> ago
+      </div>
         <div class="product-configuration">
           <div class="product-color">
             <span>Whatsapp Number</span>
@@ -89,8 +86,7 @@
                 </div>
               </div>
             </div>
-
-        </div>
+          </div>
           <div class="cable-config">
             <div class="cable-choose">
               <div class=" ui labeled button mt-4 mb-4" tabindex="0">
@@ -107,22 +103,22 @@
             <a href="mailto: <%=@task.user.email%>?subject=Enquiry - Content Manager"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i> Email this service provider</a>
           </div>
         </div>
-        <div class="product-price">
-          <div class="serv-footer">
-            <% if user_signed_in? %>
-              <% if @task.user_id == current_user.id %>
-                <%= link_to "Edit", edit_task_path(@task), class:"positive ui button" %>
-                <%= link_to "Back", tasks_path, class:"ui positive button" %>
-                <%= link_to "Delete", task_path(@task), method: :delete, data: { confirm: "Are you sure?" }, class:"ui red button" %>
-              <% else %>
-                <%= link_to "Back", tasks_path, class:"ui positive button" %>
-              <% end %>
-            <% else %>
-              <%= link_to "Back", tasks_path, class:"ui positive button" %>
-            <% end %>
-          </div>
-        </div>
       </div>
+    </div>
+  <div class="row justify-content-end">
+    <div class="footer-actions">
+      <% if user_signed_in? %>
+        <% if @task.user_id == current_user.id %>
+          <%= link_to "Edit", edit_task_path(@task), class:"positive ui button" %>
+          <%= link_to "Back", tasks_path, class:"ui positive button" %>
+          <%= link_to "Delete", task_path(@task), method: :delete, data: { confirm: "Are you sure?" }, class:"ui red button" %>
+        <% else %>
+          <%= link_to "Back", tasks_path, class:"ui positive button" %>
+        <% end %>
+      <% else %>
+        <%= link_to "Back", tasks_path, class:"ui positive button" %>
+      <% end %>
+    </div>
   </div>
 </main>
 
