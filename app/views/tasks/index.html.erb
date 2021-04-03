@@ -36,8 +36,10 @@
                       <%= cl_image_tag task.photo.key, style: 'width:100%;'%>
                     </div>
                     <% end %>
-                    <h3><%= num += 1 %>. <%= link_to task.title.capitalize, task_path(task)%> - <small><%= task.location %></small></h3>
-                    <p><small><%= time_ago_in_words(task.created_at) %> ago | <%= link_to task.get_upvotes.size, like_task_path(task), method: :put, remote: :true %> Likes | By: <%= task.user.user_name %></small></p>
+                    <div class="card-body">
+                      <h3><%= num += 1 %>. <%= link_to task.title.capitalize, task_path(task)%> - <small><%= task.location %></small></h3>
+                      <p><small><%= time_ago_in_words(task.created_at) %> ago | <%= link_to task.get_upvotes.size, like_task_path(task), method: :put, remote: :true %> Likes | By: <%= task.user.user_name %></small></p>
+                    </div>
                   </div>
                 </div>
               </div>
