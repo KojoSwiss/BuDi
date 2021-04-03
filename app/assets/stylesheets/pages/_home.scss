@@ -1,11 +1,3 @@
-
-
-h1,
-h2 {
-    font-weight: 100;
-    text-transform: uppercase;
-}
-
 h1 {
     margin-bottom: 20px;
     color: #fff;
@@ -14,6 +6,11 @@ h1 {
     letter-spacing: 1px;
     font-family: 'Lato', sans-serif;
     font-weight: 800;
+    text-transform: uppercase;
+}
+
+h1 span {
+  color: black;
 }
 
 h2 {
