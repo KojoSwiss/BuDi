@@ -2,10 +2,10 @@ class CommentsController < ApplicationController
   def create
     @task = Task.find(params[:task_id])
     @comment = @task.comments.create(comment_params)
-    @comment.user_id = current_user.user_id
+    @comment.user_id = current_user.id
 
     if @comment.save
-      redirect_to_task(@task)
+      redirect_to @task
     else
       render 'new'
     end
@@ -14,6 +14,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:content).permit(:content)
+    params.require(:comment).permit(:content)
   end
 end
