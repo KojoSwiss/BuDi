@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>Edit Comment</h1>
+      <%= simple_form_for ([@task, @comment]) do |f| %>
+        <%= f.input :content, label: "Comments" %>
+        <%= f.button :submit, class:"btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
