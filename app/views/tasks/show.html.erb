@@ -2,7 +2,7 @@
 
 <main class="container">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-7">
       <div class="serv-image">
         <% if @task.photo.attached? %>
             <%= cl_image_tag @task.photo.key %>
@@ -11,7 +11,7 @@
         <% end %>
         </div>
     </div>
-    <div class="col-md-4 p-3 mb-2 text-white" style="background-color: #58B19F;">
+    <div class="col-md-5 p-3 mb-2 text-white" style="background-color: #58B19F;">
       <div class="product-description">
         <span>Serv Gh</span>
         <h1><%= @task.title %></h1>
