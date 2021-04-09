@@ -18,11 +18,7 @@
         <p><%= @task.description %></p>
         <hr>
           <p>
-            <% if @task.user.user_name.blank? %>
-              <p>Email: <%= @task.user.email %></p>
-            <% else %>
-              <p>Posted by <%= @task.user.first_name %> </p>
-            <% end %>
+              Posted by <%= @task.user.first_name %>
             </p>
           <%= time_ago_in_words(@task.created_at) %> ago
       </div>
