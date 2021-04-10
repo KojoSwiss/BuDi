@@ -5,9 +5,9 @@
   <%= f.input :company,required: false, label: "Your Company name (optional)" %>
   <%= f.input :location, label: "Where are you located?", placeholder: "Tema" %>
   <%= f.input :phone_number, label: "Whatsapp/Telegram/Signal ... Number" %>
-  <%= f.input :url,  label: "Facebook Handle", placeholder: "kofi.menu" %>
-  <%= f.input :Ig_url, required: false, label: "Instagram Handle", placeholder: "kofi.menu" %>
-  <%= f.input :Tw_url, required: false, label: "Twitter Handle", placeholder: "kofi.menu" %>
+  <%= f.input :url,  label: "Facebook Handle with a '.' between names", placeholder: "kofi.menu" %>
+  <%= f.input :Ig_url, required: false, label: "Instagram Handle with  no spaces", placeholder: "kofimenu" %>
+  <%= f.input :Tw_url, required: false, label: "Twitter Handle with no spcaes", placeholder: "kofimenu" %>
   <%= f.input :photo, as: :file %>
   <%= f.button :submit, class:"btn btn-full" %>
 <% end %>
